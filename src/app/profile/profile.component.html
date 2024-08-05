@@ -1,0 +1,155 @@
+<mat-toolbar color="primary" class="toolbar" [@fadeIn]>
+  <span class="spacer"></span>
+  <a href="{{ profile.linkedin }}" target="_blank">
+    <fa-icon [icon]="faLinkedin"></fa-icon>
+  </a>
+  <a href="{{ profile.github }}" target="_blank">
+    <fa-icon [icon]="faGithub"></fa-icon>
+  </a>
+</mat-toolbar>
+
+<div class="profile-container" [@slideIn]>
+  <mat-card class="profile-card profile-header" [@fadeIn]>
+    <div class="profile-header-content">
+      <div mat-card-avatar class="profile-avatar"></div>
+      <mat-card-title class="name">{{ profile.name }}</mat-card-title>
+      <mat-card-subtitle class="role">{{ profile.role }}</mat-card-subtitle>
+      <div class="quote">
+        <mat-icon aria-hidden="false">format_quote</mat-icon>
+        <p>I am a passionate developer always eager to learn and implement new technologies.</p>
+      </div>
+    </div>
+    <mat-card-content>
+      <div class="icon-text location">
+        <mat-icon aria-hidden="false">place</mat-icon>
+        <p>{{ profile.location }}</p>
+      </div>
+      <div class="contact-info">
+        <div class="icon-text">
+          <mat-icon aria-hidden="false">phone</mat-icon>
+          <p>{{ profile.phone }}</p>
+        </div>
+        <div class="icon-text">
+          <mat-icon aria-hidden="false">email</mat-icon>
+          <p>{{ profile.email }}</p>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- About Section -->
+  <mat-card class="profile-card about-card" [@fadeIn]>
+    <mat-card-header>
+      <div class="icon-text">
+        <mat-icon aria-hidden="false">person</mat-icon>
+        <mat-card-title>About</mat-card-title>
+      </div>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="about-content">
+        <p class="about-text">{{ profile.about }}</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <div class="profile-columns">
+    <div class="column">
+      <!-- Work Experience Section -->
+      <mat-card class="profile-card-two experience-card" [@fadeIn]>
+        <mat-card-header>
+          <div class="icon-text">
+            <mat-icon aria-hidden="false">work</mat-icon>
+            <mat-card-title>Work Experience</mat-card-title>
+          </div>
+        </mat-card-header>
+        <mat-card-content>
+          <div *ngFor="let job of profile.experience">
+            <h3>{{ job.company }}</h3>
+            <p>{{ job.duration }}</p>
+            <div *ngFor="let project of job.projects">
+              <h4>{{ project.projectTitle }}</h4>
+              <ul>
+                <li *ngFor="let responsibility of project.responsibilities">{{ responsibility }}</li>
+              </ul>
+              <p><strong>Tech Stack:</strong> {{ project.techStack.join(', ') }}</p>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- Education Section -->
+      <mat-card class="profile-card-two education-card" [@fadeIn]>
+        <mat-card-header>
+          <div class="icon-text">
+            <mat-icon aria-hidden="false">school</mat-icon>
+            <mat-card-title>Education</mat-card-title>
+          </div>
+        </mat-card-header>
+        <mat-card-content>
+          <div *ngFor="let edu of profile.education" class="education-item">
+            <h3>{{ edu.degree }}</h3>
+            <p>{{ edu.institution }}</p>
+            <p>{{ edu.duration }}</p>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- Awards Section -->
+      <mat-card class="profile-card-two" [@fadeIn]>
+        <mat-card-header>
+          <div class="icon-text">
+            <mat-icon aria-hidden="false">star</mat-icon>
+            <mat-card-title>Awards</mat-card-title>
+          </div>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-chip-set>
+            <mat-chip *ngFor="let award of profile.awards">
+              <div class="icon-text">
+                <mat-icon aria-hidden="false">emoji_events</mat-icon>
+                <p mat-line>{{ award }}</p>
+              </div>
+            </mat-chip>
+          </mat-chip-set>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div class="column">
+      <!-- Technical Skills Section -->
+      <mat-card class="profile-card-two" [@fadeIn]>
+        <mat-card-header>
+          <div class="icon-text">
+            <mat-icon aria-hidden="false">code</mat-icon>
+            <mat-card-title>Technical Skills</mat-card-title>
+          </div>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="skills-section" *ngFor="let skillCategory of getSkillCategories()">
+            <div class="icon-text">
+              <mat-icon aria-hidden="false">{{ skillIcons[skillCategory] }}</mat-icon>
+              <h4 class="skills-heading">{{ skillCategory }}</h4>
+            </div>
+            <mat-divider></mat-divider>
+            <mat-chip-set *ngIf="isString(profile.skills[skillCategory][0])">
+              <mat-chip *ngFor="let skill of profile.skills[skillCategory]">{{ skill }}</mat-chip>
+            </mat-chip-set>
+            <div *ngIf="!isString(profile.skills[skillCategory][0])">
+              <div *ngFor="let skill of profile.skills[skillCategory]">
+                <div *ngIf="!isString(skill)">
+                  <strong>{{ skill.name }}:</strong>
+                  <mat-chip-set>
+                    <mat-chip *ngFor="let detail of skill.details">{{ detail }}</mat-chip>
+                  </mat-chip-set>
+                </div>
+                <div *ngIf="isString(skill)">
+                  <mat-chip>{{skill}}</mat-chip>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
