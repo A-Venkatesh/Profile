@@ -149,6 +149,10 @@ mat-card-header mat-icon, mat-card-header fa-icon {
   padding: 20px; /* Added padding for the About section */
 }
 
+.project-fieldset {
+  margin-bottom: 20px; /* Add gap between each fieldset */
+}
+
 h3 {
   margin: 0;
   font-size: 1.2em;

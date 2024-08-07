@@ -64,15 +64,36 @@
         </mat-card-header>
         <mat-card-content>
           <div *ngFor="let job of profile.experience">
-            <h3>{{ job.company }}</h3>
-            <p>{{ job.duration }}</p>
-            <div *ngFor="let project of job.projects">
-              <h4>{{ project.projectTitle }}</h4>
-              <ul>
-                <li *ngFor="let responsibility of project.responsibilities">{{ responsibility }}</li>
-              </ul>
-              <p><strong>Tech Stack:</strong> {{ project.techStack.join(', ') }}</p>
-            </div>
+            <p-panel [toggleable]="true">
+              <ng-template pTemplate="header">
+                <div class="flex align-items-center gap-2">
+                  <p-avatar 
+                    image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvsa_q5ZQjUEN7pcn7aQ6mOev0DYcJWfWIZA&s" 
+                    size="large" 
+                    shape="circle" />
+                  <span class="font-bold">{{ job.company }} {{ job.duration }}</span>
+                </div>
+              </ng-template>
+              <div class="project-content">
+            
+                <div *ngFor="let project of job.projects" class="project-fieldset">
+                  <p-fieldset>
+                    <ng-template pTemplate="header">
+                      <div class="flex align-items-center gap-2 px-2">
+                        <p-avatar 
+                          image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvsa_q5ZQjUEN7pcn7aQ6mOev0DYcJWfWIZA&s" 
+                          shape="circle" />
+                        <span class="font-bold">{{ project.projectTitle }}</span>
+                      </div>
+                    </ng-template>
+                    <ul>
+                      <li *ngFor="let responsibility of project.responsibilities">{{ responsibility }}</li>
+                    </ul>
+                    <p><strong>Tech Stack:</strong> {{ project.techStack.join(', ') }}</p>
+                  </p-fieldset>
+                </div>
+              </div>
+            </p-panel>
           </div>
         </mat-card-content>
       </mat-card>

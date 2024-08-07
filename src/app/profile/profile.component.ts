@@ -12,6 +12,10 @@ import {MatDividerModule} from '@angular/material/divider';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import {MatChipsModule} from '@angular/material/chips';
+import { FieldsetModule } from 'primeng/fieldset';
+import { AvatarModule } from 'primeng/avatar';
+import { PanelModule } from 'primeng/panel';
+
 
 @Component({
   selector: 'app-profile',
@@ -24,7 +28,10 @@ import {MatChipsModule} from '@angular/material/chips';
     MatGridListModule,
     MatDividerModule,
     FontAwesomeModule,
-    MatChipsModule
+    MatChipsModule,
+    FieldsetModule,
+    AvatarModule,
+    PanelModule
   ],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css',
