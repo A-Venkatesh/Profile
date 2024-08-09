@@ -15,6 +15,8 @@ import {MatChipsModule} from '@angular/material/chips';
 import { FieldsetModule } from 'primeng/fieldset';
 import { AvatarModule } from 'primeng/avatar';
 import { PanelModule } from 'primeng/panel';
+import { ChipModule } from 'primeng/chip';
+import { DividerModule } from 'primeng/divider';
 
 
 @Component({
@@ -31,7 +33,9 @@ import { PanelModule } from 'primeng/panel';
     MatChipsModule,
     FieldsetModule,
     AvatarModule,
-    PanelModule
+    PanelModule,
+    ChipModule,
+    DividerModule
   ],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css',
@@ -77,6 +81,13 @@ export class ProfileComponent implements OnInit {
     DevelopmentPractice: 'engineering',
     Others: 'more_horiz'
   };  
+
+  skillImages: { [key: string]: string } = {
+    Java: 'https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png',
+    'Spring Boot': 'https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png',
+  };
+
+  defaultSkillImage: string = 'https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png'; 
   
   constructor(private profileService: ProfileService) {}
 
@@ -91,4 +102,7 @@ export class ProfileComponent implements OnInit {
   isString(value: any): boolean {
     return typeof value === 'string';
   }  
+  getSkillImage(skill: string): string {
+    return this.skillImages[skill] || this.defaultSkillImage;
+  }
 }

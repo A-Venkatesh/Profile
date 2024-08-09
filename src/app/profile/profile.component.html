@@ -147,24 +147,27 @@
         </mat-card-header>
         <mat-card-content>
           <div class="skills-section" *ngFor="let skillCategory of getSkillCategories()">
-            <div class="icon-text">
+                        <div class="icon-text">
               <mat-icon aria-hidden="false">{{ skillIcons[skillCategory] }}</mat-icon>
               <h4 class="skills-heading">{{ skillCategory }}</h4>
             </div>
             <mat-divider></mat-divider>
-            <mat-chip-set *ngIf="isString(profile.skills[skillCategory][0])">
-              <mat-chip *ngFor="let skill of profile.skills[skillCategory]">{{ skill }}</mat-chip>
-            </mat-chip-set>
+            <div  *ngIf="isString(profile.skills[skillCategory][0])">
+              <p-chip *ngFor="let skill of profile.skills[skillCategory]" [label]="skill"
+                [image]="getSkillImage(skill)" [alt]="skill" />
+            </div>
             <div *ngIf="!isString(profile.skills[skillCategory][0])">
               <div *ngFor="let skill of profile.skills[skillCategory]">
                 <div *ngIf="!isString(skill)">
                   <strong>{{ skill.name }}:</strong>
-                  <mat-chip-set>
-                    <mat-chip *ngFor="let detail of skill.details">{{ detail }}</mat-chip>
-                  </mat-chip-set>
+                  <div>
+                    <p-chip *ngFor="let detail of skill.details" [label]="detail"
+                      [image]="getSkillImage(detail)" [alt]="detail" />
+                  </div>
                 </div>
                 <div *ngIf="isString(skill)">
-                  <mat-chip>{{skill}}</mat-chip>
+                  <p-chip [label]="skill" [image]="getSkillImage(skill)"
+                    [alt]="skill" />
                 </div>
               </div>
             </div>
