@@ -37,7 +37,6 @@ body {
   border-radius: 50%;
   width: 250px; /* Larger profile picture */
   height: 250px; /* Larger profile picture */
-  /* border: 4px solid white; */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for profile picture */
   margin-bottom: 16px; /* Space below the profile picture */
 }
@@ -174,4 +173,26 @@ ul {
 
 mat-list-item:hover {
   border-radius: 4px;
+}
+
+mat-divider {
+  margin-bottom: 15px; /* Adjust this value as needed for the desired space */
+}
+
+.p-chip {
+  font-size: 0.85em; /* Adjust font size for the chips to match other text */
+}
+.flex {
+  display: flex;
+  align-items: center; /* Vertically centers items within the flex container */
+}
+
+.flex .font-bold {
+  line-height: 1; /* Ensures that the text height is consistent */
+  margin-top: 0; /* Removes any default margin */
+  margin-bottom: 0; /* Removes any default margin */
+}
+
+p-avatar {
+  margin-right: 10px; /* Add space between avatar and text */
 }

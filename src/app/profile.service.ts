@@ -18,7 +18,7 @@ export class ProfileService {
       Frameworks: ['SpringBoot', 'Angular', 'Node.js'],
       Testing: ['JUnit', 'Mockito'],
       CloudPlatforms: [
-        { name: 'Azure', details: ['Azure API manager', 'AD', 'Analytics', 'Cosmo DB', 'Key Vault'] },
+        { name: 'Azure', details: ['API manager', 'AD', 'Analytics', 'Cosmos DB', 'Key Vault'] },
         { name: 'GCP', details: ['Apigee x', 'Cloud Functions', 'Cloud Data Fusion', 'Cloud Pub/Sub', 'Cloud Run', 'Cloud Log', 'BigQuery', 'Cloud Secret', 'Cloud Build', 'GCP Cloud Artifacts'] },
         { name: 'AWS', details: ['Lambda', 'S3', 'EC2'] }
       ],

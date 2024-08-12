@@ -103,6 +103,27 @@ export class ProfileComponent implements OnInit {
     return typeof value === 'string';
   }  
   getSkillImage(skill: string): string {
+    const basePath = 'assets/logos/';
+    const skillNameVariations = skill.toLowerCase().replace(/\s+/g, '-');
+  
+    // Return the first found image path
+      const imagePath = `${basePath}${skillNameVariations}.svg`;
+      // return imagePath;
+      try {
+        const req = new XMLHttpRequest();
+        req.open('HEAD', imagePath, false);
+        req.send();
+  
+        if (req.status === 200) {
+          return imagePath;
+        }
+      } catch (e) {
+        // Continue to the next variation if there's an error
+      }
+  
+    // If no images match, fall back to the predefined key-value pair or default image
     return this.skillImages[skill] || this.defaultSkillImage;
   }
+  
+  
 }
