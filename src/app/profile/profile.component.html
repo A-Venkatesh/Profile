@@ -67,21 +67,20 @@
             <p-panel [toggleable]="true">
               <ng-template pTemplate="header">
                 <div class="flex align-items-center gap-2">
-                  <p-avatar 
-                    image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvsa_q5ZQjUEN7pcn7aQ6mOev0DYcJWfWIZA&s" 
-                    size="large" 
-                    shape="circle" />
+                  <p-avatar
+                    image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvsa_q5ZQjUEN7pcn7aQ6mOev0DYcJWfWIZA&s"
+                    size="large" shape="circle" />
                   <span class="font-bold">{{ job.company }} {{ job.duration }}</span>
                 </div>
               </ng-template>
               <div class="project-content">
-            
+
                 <div *ngFor="let project of job.projects" class="project-fieldset">
                   <p-fieldset>
                     <ng-template pTemplate="header">
                       <div class="flex align-items-center gap-2 px-2">
-                        <p-avatar 
-                          image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvsa_q5ZQjUEN7pcn7aQ6mOev0DYcJWfWIZA&s" 
+                        <p-avatar
+                          image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvsa_q5ZQjUEN7pcn7aQ6mOev0DYcJWfWIZA&s"
                           shape="circle" />
                         <span class="font-bold">{{ project.projectTitle }}</span>
                       </div>
@@ -147,27 +146,27 @@
         </mat-card-header>
         <mat-card-content>
           <div class="skills-section" *ngFor="let skillCategory of getSkillCategories()">
-                        <div class="icon-text">
+            <div class="icon-text">
               <mat-icon aria-hidden="false">{{ skillIcons[skillCategory] }}</mat-icon>
               <h4 class="skills-heading">{{ skillCategory }}</h4>
             </div>
             <mat-divider></mat-divider>
-            <div  *ngIf="isString(profile.skills[skillCategory][0])">
-              <p-chip *ngFor="let skill of profile.skills[skillCategory]" [label]="skill"
-                [image]="getSkillImage(skill)" [alt]="skill" />
+            <div *ngIf="isString(profile.skills[skillCategory][0])">
+              <p-chip *ngFor="let skill of profile.skills[skillCategory]" [label]="skill" [image]="getSkillImage(skill)"
+                [alt]="skill" />
             </div>
             <div *ngIf="!isString(profile.skills[skillCategory][0])">
               <div *ngFor="let skill of profile.skills[skillCategory]">
                 <div *ngIf="!isString(skill)">
+                  <p-avatar [image]="getSkillImage(skill.name)" styleClass="mr-2" size="normal" shape="circle" />
                   <strong>{{ skill.name }}:</strong>
                   <div>
-                    <p-chip *ngFor="let detail of skill.details" [label]="detail"
-                      [image]="getSkillImage(detail)" [alt]="detail" />
+                    <p-chip *ngFor="let detail of skill.details" [label]="detail" [image]="getSkillImage(detail)"
+                      [alt]="detail" />
                   </div>
                 </div>
                 <div *ngIf="isString(skill)">
-                  <p-chip [label]="skill" [image]="getSkillImage(skill)"
-                    [alt]="skill" />
+                  <p-chip [label]="skill" [image]="getSkillImage(skill)" [alt]="skill" />
                 </div>
               </div>
             </div>

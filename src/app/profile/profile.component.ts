@@ -87,7 +87,7 @@ export class ProfileComponent implements OnInit {
     'Spring Boot': 'https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png',
   };
 
-  defaultSkillImage: string = 'https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png'; 
+  defaultSkillImage: string = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyAWmAe5UBdinr66fGFYymYvFCenoK9pizhg&s'; 
   
   constructor(private profileService: ProfileService) {}
 
