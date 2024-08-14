@@ -17,6 +17,7 @@ import { AvatarModule } from 'primeng/avatar';
 import { PanelModule } from 'primeng/panel';
 import { ChipModule } from 'primeng/chip';
 import { DividerModule } from 'primeng/divider';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -89,10 +90,13 @@ export class ProfileComponent implements OnInit {
 
   defaultSkillImage: string = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyAWmAe5UBdinr66fGFYymYvFCenoK9pizhg&s'; 
   
-  constructor(private profileService: ProfileService) {}
+  constructor(private profileService: ProfileService, private activatedRoute: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
     this.profile = this.profileService.getProfile();
+    this.activatedRoute.fragment.subscribe((fragment: string | null) => {
+      if (fragment) this.jumpToSection(fragment);
+    });
   }
 
   getSkillCategories() {
@@ -124,6 +128,20 @@ export class ProfileComponent implements OnInit {
     // If no images match, fall back to the predefined key-value pair or default image
     return this.skillImages[skill] || this.defaultSkillImage;
   }
+
+  jumpToSection(section: string | null) {
+    if (section) document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+  }
   
+  scrollToFragment(fragment: string) {
+    console.log(fragment);
+    
+    this.router.navigate(['/home'], { fragment }).then(() => {
+      const element = document.getElementById(fragment);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
   
 }

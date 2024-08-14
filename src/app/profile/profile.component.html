@@ -1,5 +1,9 @@
 <mat-toolbar color="primary" class="toolbar" [@fadeIn]>
+
   <span class="spacer"></span>
+  <a mat-button (click)="scrollToFragment('about')">About</a>
+  <a mat-button (click)="scrollToFragment('experience')">Experience</a>
+  <a mat-button (click)="scrollToFragment('skills')">Skills</a>
   <a href="{{ profile.linkedin }}" target="_blank">
     <fa-icon [icon]="faLinkedin"></fa-icon>
   </a>
@@ -9,6 +13,7 @@
 </mat-toolbar>
 
 <div class="profile-container" [@slideIn]>
+  <div id="about" class="profile-container">
   <mat-card class="profile-card profile-header" [@fadeIn]>
     <div class="profile-header-content">
       <div mat-card-avatar class="profile-avatar"></div>
@@ -36,7 +41,6 @@
       </div>
     </mat-card-content>
   </mat-card>
-
   <!-- About Section -->
   <mat-card class="profile-card about-card" [@fadeIn]>
     <mat-card-header>
@@ -51,8 +55,8 @@
       </div>
     </mat-card-content>
   </mat-card>
-
-  <div class="profile-columns">
+</div>
+  <div  id="experience" class="profile-columns">
     <div class="column">
       <!-- Work Experience Section -->
       <mat-card class="profile-card-two experience-card" [@fadeIn]>
@@ -135,7 +139,7 @@
       </mat-card>
     </div>
 
-    <div class="column">
+    <div  id="skills" class="column">
       <!-- Technical Skills Section -->
       <mat-card class="profile-card-two" [@fadeIn]>
         <mat-card-header>
