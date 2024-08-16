@@ -5,9 +5,6 @@ import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatListModule } from '@angular/material/list';
-import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDividerModule} from '@angular/material/divider';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -16,29 +13,25 @@ import { FieldsetModule } from 'primeng/fieldset';
 import { AvatarModule } from 'primeng/avatar';
 import { PanelModule } from 'primeng/panel';
 import { ChipModule } from 'primeng/chip';
-import { DividerModule } from 'primeng/divider';
+import { DockModule } from 'primeng/dock';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
-import { DockModule } from 'primeng/dock';
-
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [CommonModule,MatToolbarModule,
+  imports: [
+    CommonModule,
+    MatToolbarModule,
     MatCardModule,
     MatIconModule,
-    MatButtonModule,
-    MatListModule,
-    MatGridListModule,
+    MatChipsModule,
     MatDividerModule,
     FontAwesomeModule,
-    MatChipsModule,
     FieldsetModule,
     AvatarModule,
     PanelModule,
     ChipModule,
-    DividerModule,
     DockModule
   ],
   templateUrl: './profile.component.html',
@@ -85,44 +78,40 @@ export class ProfileComponent implements OnInit {
     DevelopmentTools: 'code',
     DevelopmentPractice: 'engineering',
     Others: 'more_horiz'
-  };  
+  };
 
   skillImages: { [key: string]: string } = {
     Java: 'https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png',
-    'Spring Boot': 'https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png',
+    'Spring Boot': 'https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png'
   };
 
-  defaultSkillImage: string = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyAWmAe5UBdinr66fGFYymYvFCenoK9pizhg&s'; 
-  
-  constructor(private profileService: ProfileService, private activatedRoute: ActivatedRoute, private router: Router) {}
+  defaultSkillImage = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyAWmAe5UBdinr66fGFYymYvFCenoK9pizhg&s';
+
+  constructor(
+    private profileService: ProfileService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.profile = this.profileService.getProfile();
-    this.activatedRoute.fragment.subscribe((fragment: string | null) => {
+    this.setupFragmentNavigation();
+    this.setupDockItems();
+  }
+
+  setupFragmentNavigation() {
+    this.activatedRoute.fragment.subscribe(fragment => {
       if (fragment) this.jumpToSection(fragment);
     });
+  }
+
+  setupDockItems() {
     this.items = [
-      {
-          label: 'About me',
-          icon: 'https://www.themarketingsage.com/wp-content/uploads/2015/08/about-me-leon-severan-we-buy-houses.jpg',
-          target: 'about'
-      },
-      {
-          label: 'Experience',
-          icon: '/assets/docker/experience.png',
-          target: 'experience'
-      },
-      {
-          label: 'Skills',
-          icon: '/assets/docker/skills.png',
-          target:'skills'
-      },
-      {
-          label: 'Award',
-          icon: '/assets/docker/award.png',
-          target: 'award'
-      }
-  ];
+      { label: 'About me', icon: 'https://www.themarketingsage.com/wp-content/uploads/2015/08/about-me-leon-severan-we-buy-houses.jpg', target: 'about' },
+      { label: 'Experience', icon: '/assets/docker/experience.png', target: 'experience' },
+      { label: 'Skills', icon: '/assets/docker/skills.png', target: 'skills' },
+      { label: 'Award', icon: '/assets/docker/award.png', target: 'award' }
+    ];
   }
 
   getSkillCategories() {
@@ -131,37 +120,32 @@ export class ProfileComponent implements OnInit {
 
   isString(value: any): boolean {
     return typeof value === 'string';
-  }  
+  }
+
   getSkillImage(skill: string): string {
     const basePath = 'assets/logos/';
     const skillNameVariations = skill.toLowerCase().replace(/\s+/g, '-');
-  
-    // Return the first found image path
-      const imagePath = `${basePath}${skillNameVariations}.svg`;
-      // return imagePath;
-      try {
-        const req = new XMLHttpRequest();
-        req.open('HEAD', imagePath, false);
-        req.send();
-  
-        if (req.status === 200) {
-          return imagePath;
-        }
-      } catch (e) {
-        // Continue to the next variation if there's an error
+    const imagePath = `${basePath}${skillNameVariations}.svg`;
+
+    try {
+      const req = new XMLHttpRequest();
+      req.open('HEAD', imagePath, false);
+      req.send();
+      if (req.status === 200) {
+        return imagePath;
       }
-  
-    // If no images match, fall back to the predefined key-value pair or default image
+    } catch (e) {
+      // Continue to fallback if error occurs
+    }
+
     return this.skillImages[skill] || this.defaultSkillImage;
   }
 
   jumpToSection(section: string | null) {
     if (section) document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
   }
-  
+
   scrollToFragment(fragment: string) {
-    console.log(fragment);
-    
     this.router.navigate(['/home'], { fragment }).then(() => {
       const element = document.getElementById(fragment);
       if (element) {
@@ -169,5 +153,4 @@ export class ProfileComponent implements OnInit {
       }
     });
   }
-  
 }
