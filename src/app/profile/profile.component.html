@@ -35,12 +35,8 @@
             <p>{{ profile.email }}</p>
           </div>
           <div class="icon-buttons">
-            <a mat-icon-button href="{{ profile.linkedin }}" target="_blank" aria-label="LinkedIn">
-              <fa-icon [icon]="faLinkedin"></fa-icon>
-            </a>
-            <a mat-icon-button href="{{ profile.github }}" target="_blank" aria-label="GitHub">
-              <fa-icon [icon]="faGithub"></fa-icon>
-            </a>
+            <a pButton icon="pi pi-linkedin" href="{{ profile.linkedin }}" target="_blank" aria-label="LinkedIn"></a>
+            <a pButton icon="pi pi-github" href="{{ profile.github }}" target="_blank" aria-label="GitHub"></a>
           </div>
         </div>
       </mat-card-content>
@@ -60,7 +56,8 @@
       </mat-card-content>
     </mat-card>
   </div>
-  <div  class="profile-columns">
+
+  <div class="profile-columns">
     <div class="column">
       <!-- Work Experience Section -->
       <mat-card id="experience" class="profile-card-two experience-card" [@fadeIn]>
@@ -82,7 +79,6 @@
                 </div>
               </ng-template>
               <div class="project-content">
-
                 <div *ngFor="let project of job.projects" class="project-fieldset">
                   <p-fieldset>
                     <ng-template pTemplate="header">
@@ -123,7 +119,7 @@
       </mat-card>
 
       <!-- Awards Section -->
-      <mat-card id="awards" class="profile-card-two" id="award" [@fadeIn]>
+      <mat-card id="awards" class="profile-card-two" [@fadeIn]>
         <mat-card-header>
           <div class="icon-text">
             <mat-icon aria-hidden="false">star</mat-icon>
@@ -183,8 +179,8 @@
       </mat-card>
     </div>
   </div>
-
 </div>
+
 <div>
   <p-dock [model]="items" position="left">
     <ng-template pTemplate="item" let-item>
@@ -194,6 +190,4 @@
       </div>
     </ng-template>
   </p-dock>
-
-
 </div>

@@ -6,7 +6,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  /* padding: 20px; */
 }
 .profile-columns {
   display: flex;
@@ -21,11 +21,11 @@ body {
 }
 
 .column:first-child {
-  width: 70%; /* Increased width for the first column */
+  width: 60%; /* Increased width for the first column */
 }
 
 .column:last-child {
-  width: 30%; /* Reduced width for the second column */
+  width: 40%; /* Reduced width for the second column */
 }
 
 .about-content {
