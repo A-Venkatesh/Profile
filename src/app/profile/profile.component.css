@@ -58,7 +58,7 @@ body {
 }
 
 mat-icon, fa-icon {
-  margin-left: 10px;
+  /* margin-left: 10px; */
 }
 
 mat-card-header mat-icon, mat-card-header fa-icon {
@@ -195,4 +195,43 @@ mat-divider {
 
 p-avatar {
   margin-right: 10px; /* Add space between avatar and text */
+}
+
+.icon-buttons {
+  display: flex;
+  justify-content: start;
+  gap: 10px; /* Adjust spacing between buttons */
+  margin-top: 10px;
+}
+
+
+:host ::ng-deep {
+
+    .p-dock {
+        z-index: 1000;
+    }
+
+}
+
+:host ::ng-deep .p-dock-left .p-dock-item  .p-menuitem-content .p-dock-link{
+  width: 100px;  /* Adjust the width */
+  height: 100px; /* Adjust the height */
+}
+
+:host ::ng-deep .p-dock-left .p-dock-item img {
+  width: 80%;  /* Ensure the image fits within the dock item */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Preserve the aspect ratio of the image */
+}
+
+:host ::ng-deep .p-dock-item-title {
+  text-align: center;
+  font-size: 0.85em; /* Adjust font size */
+  margin-top: 5px;  /* Add some space above the title */
+  color: #000;  /* Set color for title text */
+}
+
+:host ::ng-deep .p-dock-left {
+  position: fixed;  /* This makes the dock stay fixed on the screen */
+  z-index: 1000;    /* Ensures the dock stays above other content */
 }

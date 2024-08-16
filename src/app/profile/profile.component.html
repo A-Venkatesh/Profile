@@ -1,65 +1,69 @@
-<mat-toolbar color="primary" class="toolbar" [@fadeIn]>
+<!-- <mat-toolbar color="primary" class="toolbar" [@fadeIn]>
 
   <span class="spacer"></span>
   <a mat-button (click)="scrollToFragment('about')">About</a>
   <a mat-button (click)="scrollToFragment('experience')">Experience</a>
   <a mat-button (click)="scrollToFragment('skills')">Skills</a>
-  <a href="{{ profile.linkedin }}" target="_blank">
-    <fa-icon [icon]="faLinkedin"></fa-icon>
-  </a>
-  <a href="{{ profile.github }}" target="_blank">
-    <fa-icon [icon]="faGithub"></fa-icon>
-  </a>
-</mat-toolbar>
+  <a mat-button (click)="scrollToFragment('award')">Award</a>
+
+</mat-toolbar> -->
 
 <div class="profile-container" [@slideIn]>
   <div id="about" class="profile-container">
-  <mat-card class="profile-card profile-header" [@fadeIn]>
-    <div class="profile-header-content">
-      <div mat-card-avatar class="profile-avatar"></div>
-      <mat-card-title class="name">{{ profile.name }}</mat-card-title>
-      <mat-card-subtitle class="role">{{ profile.role }}</mat-card-subtitle>
-      <div class="quote">
-        <mat-icon aria-hidden="false">format_quote</mat-icon>
-        <p>I am a passionate developer always eager to learn and implement new technologies.</p>
-      </div>
-    </div>
-    <mat-card-content>
-      <div class="icon-text location">
-        <mat-icon aria-hidden="false">place</mat-icon>
-        <p>{{ profile.location }}</p>
-      </div>
-      <div class="contact-info">
-        <div class="icon-text">
-          <mat-icon aria-hidden="false">phone</mat-icon>
-          <p>{{ profile.phone }}</p>
-        </div>
-        <div class="icon-text">
-          <mat-icon aria-hidden="false">email</mat-icon>
-          <p>{{ profile.email }}</p>
+    <mat-card class="profile-card profile-header" [@fadeIn]>
+      <div class="profile-header-content">
+        <div mat-card-avatar class="profile-avatar"></div>
+        <mat-card-title class="name">{{ profile.name }}</mat-card-title>
+        <mat-card-subtitle class="role">{{ profile.role }}</mat-card-subtitle>
+        <div class="quote">
+          <mat-icon aria-hidden="false">format_quote</mat-icon>
+          <p>I am a passionate developer always eager to learn and implement new technologies.</p>
         </div>
       </div>
-    </mat-card-content>
-  </mat-card>
-  <!-- About Section -->
-  <mat-card class="profile-card about-card" [@fadeIn]>
-    <mat-card-header>
-      <div class="icon-text">
-        <mat-icon aria-hidden="false">person</mat-icon>
-        <mat-card-title>About</mat-card-title>
-      </div>
-    </mat-card-header>
-    <mat-card-content>
-      <div class="about-content">
-        <p class="about-text">{{ profile.about }}</p>
-      </div>
-    </mat-card-content>
-  </mat-card>
-</div>
-  <div  id="experience" class="profile-columns">
+      <mat-card-content>
+        <div class="icon-text location">
+          <mat-icon aria-hidden="false">place</mat-icon>
+          <p>{{ profile.location }}</p>
+        </div>
+        <div class="contact-info">
+          <div class="icon-text">
+            <mat-icon aria-hidden="false">phone</mat-icon>
+            <p>{{ profile.phone }}</p>
+          </div>
+          <div class="icon-text">
+            <mat-icon aria-hidden="false">email</mat-icon>
+            <p>{{ profile.email }}</p>
+          </div>
+          <div class="icon-buttons">
+            <a mat-icon-button href="{{ profile.linkedin }}" target="_blank" aria-label="LinkedIn">
+              <fa-icon [icon]="faLinkedin"></fa-icon>
+            </a>
+            <a mat-icon-button href="{{ profile.github }}" target="_blank" aria-label="GitHub">
+              <fa-icon [icon]="faGithub"></fa-icon>
+            </a>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <!-- About Section -->
+    <mat-card class="profile-card about-card" [@fadeIn]>
+      <mat-card-header>
+        <div class="icon-text">
+          <mat-icon aria-hidden="false">person</mat-icon>
+          <mat-card-title>About</mat-card-title>
+        </div>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="about-content">
+          <p class="about-text">{{ profile.about }}</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div  class="profile-columns">
     <div class="column">
       <!-- Work Experience Section -->
-      <mat-card class="profile-card-two experience-card" [@fadeIn]>
+      <mat-card id="experience" class="profile-card-two experience-card" [@fadeIn]>
         <mat-card-header>
           <div class="icon-text">
             <mat-icon aria-hidden="false">work</mat-icon>
@@ -119,7 +123,7 @@
       </mat-card>
 
       <!-- Awards Section -->
-      <mat-card class="profile-card-two" [@fadeIn]>
+      <mat-card class="profile-card-two" id="award" [@fadeIn]>
         <mat-card-header>
           <div class="icon-text">
             <mat-icon aria-hidden="false">star</mat-icon>
@@ -139,7 +143,7 @@
       </mat-card>
     </div>
 
-    <div  id="skills" class="column">
+    <div id="skills" class="column">
       <!-- Technical Skills Section -->
       <mat-card class="profile-card-two" [@fadeIn]>
         <mat-card-header>
@@ -179,4 +183,17 @@
       </mat-card>
     </div>
   </div>
+
+</div>
+<div>
+  <p-dock [model]="items" position="left">
+    <ng-template pTemplate="item" let-item>
+      <div style="text-align: center;">
+        <img [src]="item.icon" [alt]="item.label" (click)="scrollToFragment(item.target)" />
+        <div class="p-dock-item-title">{{ item.label }}</div>
+      </div>
+    </ng-template>
+  </p-dock>
+
+
 </div>

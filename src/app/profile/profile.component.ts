@@ -18,6 +18,8 @@ import { PanelModule } from 'primeng/panel';
 import { ChipModule } from 'primeng/chip';
 import { DividerModule } from 'primeng/divider';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MenuItem } from 'primeng/api';
+import { DockModule } from 'primeng/dock';
 
 
 @Component({
@@ -36,7 +38,8 @@ import { ActivatedRoute, Router } from '@angular/router';
     AvatarModule,
     PanelModule,
     ChipModule,
-    DividerModule
+    DividerModule,
+    DockModule
   ],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css',
@@ -61,6 +64,7 @@ export class ProfileComponent implements OnInit {
   profile: any;
   faLinkedin = faLinkedin;
   faGithub = faGithub;
+  items: MenuItem[] | undefined;
 
   skillIcons: { [key: string]: string } = {
     Languages: 'language',
@@ -97,6 +101,28 @@ export class ProfileComponent implements OnInit {
     this.activatedRoute.fragment.subscribe((fragment: string | null) => {
       if (fragment) this.jumpToSection(fragment);
     });
+    this.items = [
+      {
+          label: 'About me',
+          icon: 'https://www.themarketingsage.com/wp-content/uploads/2015/08/about-me-leon-severan-we-buy-houses.jpg',
+          target: 'about'
+      },
+      {
+          label: 'Experience',
+          icon: '/assets/docker/experience.png',
+          target: 'experience'
+      },
+      {
+          label: 'Skills',
+          icon: '/assets/docker/skills.png',
+          target:'skills'
+      },
+      {
+          label: 'Award',
+          icon: '/assets/docker/award.png',
+          target: 'award'
+      }
+  ];
   }
 
   getSkillCategories() {
