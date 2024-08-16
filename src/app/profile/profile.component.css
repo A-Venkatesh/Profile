@@ -8,6 +8,30 @@ body {
   align-items: center;
   padding: 20px;
 }
+.profile-columns {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  gap: 20px; /* Added gap to balance columns */
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.column:first-child {
+  width: 70%; /* Increased width for the first column */
+}
+
+.column:last-child {
+  width: 30%; /* Reduced width for the second column */
+}
+
+.about-content {
+  padding: 20px; /* Added padding for the About section */
+}
+
 
 .profile-card {
   width: 80%;
@@ -124,29 +148,6 @@ mat-card-header mat-icon, mat-card-header fa-icon {
   width: 100%;
 }
 
-.profile-columns {
-  display: flex;
-  width: 80%;
-  justify-content: space-between;
-  gap: 20px; /* Added gap to balance columns */
-}
-
-.column {
-  display: flex;
-  flex-direction: column;
-}
-
-.column:first-child {
-  width: 70%; /* Increased width for the first column */
-}
-
-.column:last-child {
-  width: 30%; /* Reduced width for the second column */
-}
-
-.about-content {
-  padding: 20px; /* Added padding for the About section */
-}
 
 .project-fieldset {
   margin-bottom: 20px; /* Add gap between each fieldset */
