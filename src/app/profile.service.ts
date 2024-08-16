@@ -44,9 +44,13 @@ export class ProfileService {
       {
         company: 'HTC Global Services',
         duration: '04/2021 – 04/2024',
+        logo: 'https://image-service.leadiq.com/companylogo?linkedinId=201351',
         projects: [
           {
             projectTitle: 'API Platform Enablement',
+            duration: '04/2021 – 04/2024',
+            client: 'Ford',
+            logo: 'https://pbs.twimg.com/profile_images/1390283337055490048/Dt5ZJBL6_400x400.png',
             responsibilities: [
               'Developed secure web applications that help other teams publish APIs to APIGEE gateway, catalog for searching the available APIs and access management with Angular and Spring Boot, focusing on cloud connectivity and security, utilizing OAuth, Open API, GraphQL, REST and JSON for secure, efficient APIs.',
               'Managed gateways like Azure API Management (APIM), IBM API Connect and GCP APIgee.',
@@ -67,10 +71,13 @@ export class ProfileService {
       {
         company: 'Cognizant, India',
         duration: '12/2017 – 04/2021',
+        logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvsa_q5ZQjUEN7pcn7aQ6mOev0DYcJWfWIZA&s',
         projects: [
           {
-            projectTitle: 'Microservices for BPM – Client - Verizon, USA',
+            projectTitle: 'Microservices for BPM',
             duration: '07/2020 – 04/2021',
+            client: 'Verizon',
+            logo: 'https://assets.simon.com/tenantlogos/6461.png',
             responsibilities: [
               'Collaboratively developed 20+ microservices from wireframes that helped data provisioning functionality utilizing technologies such as Spring Boot, Camel, and Cassandra DB, facilitating seamless data provisioning and migration from legacy systems.',
               'Enhanced telecommunications, billing, and subscription management of BPM through the transition to agile microservices that act as middleware between UI and Legacy DB, fostering improved scalability and flexibility.',
@@ -79,8 +86,10 @@ export class ProfileService {
             techStack: ['Java 8', 'Spring', 'PostgreSQL', 'Microservices', 'RabbitMQ', 'REST API', 'JIRA', 'GIT', 'Elasticsearch', 'MongoDB', 'Jenkins', 'Gradle', 'Ansible', 'AWS', 'Kibana']
           },
           {
-            projectTitle: 'Mainframe to Micro-service migration – Client - Direct Line Group',
+            projectTitle: 'Mainframe to Micro-service migration',
             duration: '01/2020 – 06/2020',
+            client: 'Direct Line Group',
+            logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPJaZcviKeVz0qqm_IyaFtQwFSaoEEpVkq0A&s',
             responsibilities: [
               'Developed Spring Boot microservices for HTTP request conversion, bridging the gap between digital and legacy systems by translating requests across JSON, XML, and Delimited formats, replacing costly licensed Data Power APIs.',
               'Streamlined data exchange processes, fostering seamless integration between modern digital platforms and legacy systems, thereby enhancing operational efficiency and reducing expenses.'
@@ -88,8 +97,10 @@ export class ProfileService {
             techStack: ['Java 11', 'Spring Boot', 'PostgreSQL', 'Microservices', 'Multithreading', 'JUnit', 'Jmeter', 'JFrog', 'JIRA', 'GIT', 'Gradle', 'Kafka']
           },
           {
-            projectTitle: 'SRI Application Improvement – Client - Direct Line Group',
+            projectTitle: 'SRI Application Improvement',
             duration: '08/2018 – 12/2019',
+            client: 'Direct Line Group',
+            logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPJaZcviKeVz0qqm_IyaFtQwFSaoEEpVkq0A&s',
             responsibilities: [
               'Enhanced the SRI Application built on the JSF framework by implementing auditing capabilities, including individual audit trail pages for each document, multi-document updates, and automated indexing through internal email analysis for seamless data retrieval.',
               'Implemented advanced features such as sorting, filtering, and bulk updates to improve user experience and streamline workflow processes.',
@@ -98,8 +109,10 @@ export class ProfileService {
             techStack: ['Java 6', 'JSF', 'Servlets', 'JDBC', 'EJB', 'Struts', 'Spring', 'PostgreSQL', 'PrimeFace', 'JIRA', 'GIT', 'Maven', 'HTML', 'CSS', 'Material']
           },
           {
-            projectTitle: 'GDPR eCRM – Client - Direct Line Group',
+            projectTitle: 'GDPR eCRM',
             duration: '12/2017 – 07/2018',
+            client: 'Direct Line Group',
+            logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPJaZcviKeVz0qqm_IyaFtQwFSaoEEpVkq0A&s',
             responsibilities: [
               'Contributed to the migration of the eCRM Application to meet rigorous data protection standards, specifically addressing GDPR amendments, to bolster organizational data security and compliance.',
               'Collaborated in the implementation of enhanced data protection measures across all CRM functionalities, utilizing the Spring and Hibernate frameworks to fortify data security and ensure regulatory adherence.',
@@ -112,8 +125,10 @@ export class ProfileService {
     ],
     education: [
       {
-        degree: 'Bachelor of Technology | Information Technology',
-        institution: 'Crescent Institute of Science and Technology, Chennai, TN, India',
+        degree: 'Bachelor of Technology',
+        major: 'Information Technology',
+        institution: 'Crescent Institute of Science and Technology',
+        location: 'Chennai, TN, India',
         duration: '07/2013 – 05/2017',
       }
     ],

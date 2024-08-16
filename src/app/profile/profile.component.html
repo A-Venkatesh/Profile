@@ -73,7 +73,7 @@
               <ng-template pTemplate="header">
                 <div class="flex align-items-center gap-2">
                   <p-avatar
-                    image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvsa_q5ZQjUEN7pcn7aQ6mOev0DYcJWfWIZA&s"
+                  [image]="job.logo"
                     size="large" shape="circle" />
                   <span class="font-bold">{{ job.company }} {{ job.duration }}</span>
                 </div>
@@ -84,9 +84,9 @@
                     <ng-template pTemplate="header">
                       <div class="flex align-items-center gap-2 px-2">
                         <p-avatar
-                          image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvsa_q5ZQjUEN7pcn7aQ6mOev0DYcJWfWIZA&s"
+                        [image]="project.logo"
                           shape="circle" />
-                        <span class="font-bold">{{ project.projectTitle }}</span>
+                        <span class="font-bold">{{project.client}} | {{ project.projectTitle }}| {{project.duration}}</span>
                       </div>
                     </ng-template>
                     <ul>
@@ -112,8 +112,10 @@
         <mat-card-content>
           <div *ngFor="let edu of profile.education" class="education-item">
             <h3>{{ edu.degree }}</h3>
+            <h4>{{ edu.major}}</h4>
             <p>{{ edu.institution }}</p>
             <p>{{ edu.duration }}</p>
+            <p> {{ edu.location}}</p>
           </div>
         </mat-card-content>
       </mat-card>
