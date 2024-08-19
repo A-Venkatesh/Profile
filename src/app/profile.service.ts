@@ -127,8 +127,12 @@ export class ProfileService {
       {
         degree: 'Bachelor of Technology',
         major: 'Information Technology',
-        institution: 'Crescent Institute of Science and Technology',
-        location: 'Chennai, TN, India',
+        institution: { 
+          name : 'Crescent Institute of Science and Technology',
+          logo: 'https://upload.wikimedia.org/wikipedia/en/c/c7/B.S._Abdur_Rahman_Crescent_Institute_of_Science_and_Technology_logo.png',
+          location: 'Chennai, TN, India',
+          website: 'https://crescent.education/'
+         } ,
         duration: '07/2013 – 05/2017',
       }
     ],

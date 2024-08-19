@@ -236,3 +236,9 @@ p-avatar {
   position: fixed;  /* This makes the dock stay fixed on the screen */
   z-index: 1000;    /* Ensures the dock stays above other content */
 }
+
+
+:host ::ng-deep  .mat-mdc-card-content:first-child{
+  padding-top: 0px;
+
+}

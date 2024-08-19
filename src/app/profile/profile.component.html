@@ -92,7 +92,12 @@
                     <ul>
                       <li *ngFor="let responsibility of project.responsibilities">{{ responsibility }}</li>
                     </ul>
-                    <p><strong>Tech Stack:</strong> {{ project.techStack.join(', ') }}</p>
+                    <!-- <p><strong>Tech Stack:</strong> {{ project.techStack.join(', ') }}</p> -->
+
+                    <div class="card flex align-items-center gap-2 flex-wrap">
+                      <p><strong>Tech Stack:</strong></p>
+                      <p-chip [label]="tool"  *ngFor="let tool of project.techStack " />
+                  </div>
                   </p-fieldset>
                 </div>
               </div>
@@ -102,21 +107,30 @@
       </mat-card>
 
       <!-- Education Section -->
+
       <mat-card id="education" class="profile-card-two education-card" [@fadeIn]>
-        <mat-card-header>
-          <div class="icon-text">
-            <mat-icon aria-hidden="false">school</mat-icon>
-            <mat-card-title>Education</mat-card-title>
-          </div>
-        </mat-card-header>
         <mat-card-content>
-          <div *ngFor="let edu of profile.education" class="education-item">
-            <h3>{{ edu.degree }}</h3>
-            <h4>{{ edu.major}}</h4>
-            <p>{{ edu.institution }}</p>
-            <p>{{ edu.duration }}</p>
-            <p> {{ edu.location}}</p>
-          </div>
+          <p-fieldset>
+            <ng-template pTemplate="header">
+              <div class="flex align-items-center gap-2 px-2">
+                <mat-icon aria-hidden="false">school</mat-icon>
+                <mat-card-title>Education</mat-card-title>
+              </div>
+            </ng-template>
+            <div *ngFor="let edu of profile.education" class="education-item">
+              <h3>{{ edu.degree }}</h3>
+              <h4>{{ edu.major}}</h4>
+              <a [href]="edu.institution.website"><p-avatar
+                [image]="edu.institution.logo"
+                  shape="circle" />
+                  {{ edu.institution.name }}</a>
+              <p>{{ edu.institution.location }}</p>
+              <p>{{ edu.duration }}</p>
+              <p> {{ edu.location}}</p>
+            </div>
+    
+          </p-fieldset> 
+
         </mat-card-content>
       </mat-card>
 
