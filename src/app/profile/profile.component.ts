@@ -17,6 +17,9 @@ import { DockModule } from 'primeng/dock';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 
+import { TimelineModule } from 'primeng/timeline';
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
 @Component({
   selector: 'app-profile',
   standalone: true,
@@ -32,7 +35,8 @@ import { MenuItem } from 'primeng/api';
     AvatarModule,
     PanelModule,
     ChipModule,
-    DockModule
+    DockModule,
+    TimelineModule
   ],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css',

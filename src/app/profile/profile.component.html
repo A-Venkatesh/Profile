@@ -86,27 +86,43 @@
                   </div>
                 </ng-template>
                 <div class="project-content">
-                  <div *ngFor="let project of job.projects" class="project-fieldset">
-                    <p-fieldset>
-                      <ng-template pTemplate="header">
-                        <div class="flex align-items-center gap-2 px-2">
+                  <div class="card">
+                    <p-timeline [value]="job.projects" styleClass="customized-timeline">
+                        <ng-template pTemplate="marker" let-event>
                           <p-avatar
-                          [image]="project.logo"
+                          [image]="event.logo"
                             shape="circle" />
-                          <span class="font-bold">{{project.client}} | {{ project.projectTitle }}| {{project.duration}}</span>
-                        </div>
+                        </ng-template>
+                        <ng-template pTemplate="content" let-event>
+                          <p-fieldset class="marginBottom">
+                            <ng-template pTemplate="header">
+                              <div class="flex align-items-center gap-2 px-2">
+                                <!-- <p-avatar
+                                [image]="event.logo"
+                                  shape="circle" /> -->
+                                <span class="font-bold">{{event.client}} | {{ event.projectTitle }}| {{event.duration}}</span>
+                              </div>
+                            </ng-template>
+                            <ul>
+                              <li *ngFor="let responsibility of event.responsibilities">{{ responsibility }}</li>
+                            </ul>
+                            <!-- <p><strong>Tech Stack:</strong> {{ project.techStack.join(', ') }}</p> -->
+        
+                            <div class="card flex align-items-center gap-2 flex-wrap">
+                              <p><strong>Tech Stack:</strong></p>
+                              <p-chip [label]="tool"  *ngFor="let tool of event.techStack " />
+                          </div>
+                          </p-fieldset>
+                        </ng-template>
+                        <ng-template pTemplate="opposite" let-event>
+                          {{event.duration}}
                       </ng-template>
-                      <ul>
-                        <li *ngFor="let responsibility of project.responsibilities">{{ responsibility }}</li>
-                      </ul>
-                      <!-- <p><strong>Tech Stack:</strong> {{ project.techStack.join(', ') }}</p> -->
-  
-                      <div class="card flex align-items-center gap-2 flex-wrap">
-                        <p><strong>Tech Stack:</strong></p>
-                        <p-chip [label]="tool"  *ngFor="let tool of project.techStack " />
-                    </div>
-                    </p-fieldset>
-                  </div>
+                    </p-timeline>
+                </div>
+
+
+
+
                 </div>
               </p-panel>
             </div>
