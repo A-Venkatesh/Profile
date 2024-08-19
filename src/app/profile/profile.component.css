@@ -140,10 +140,6 @@ mat-card-header mat-icon, mat-card-header fa-icon {
   margin-bottom: 16px; /* Space between contact info items */
 }
 
-.about-card {
-  padding: 20px;
-}
-
 .education-card, .experience-card {
   width: 100%;
 }
@@ -241,4 +237,9 @@ p-avatar {
 :host ::ng-deep  .mat-mdc-card-content:first-child{
   padding-top: 0px;
 
+}
+
+:host ::ng-deep .p-panel {
+  border: none; /* Removes the border */
+  box-shadow: none; /* Removes any shadow if needed */
 }
