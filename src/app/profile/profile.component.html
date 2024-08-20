@@ -239,9 +239,9 @@
   <p-dock [model]="items" position="left">
     <ng-template pTemplate="item" let-item>
       <div style="text-align: center;">
-        <img [src]="item.icon" [alt]="item.label" (click)="scrollToFragment(item.target)" />
+        <fa-icon [icon]="item.faIcon" size="3x" (click)="scrollToFragment(item.target)"></fa-icon>
         <div class="p-dock-item-title">{{ item.label }}</div>
       </div>
     </ng-template>
-  </p-dock>
+  </p-dock>  
 </div>

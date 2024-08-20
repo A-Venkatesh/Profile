@@ -18,6 +18,7 @@ import { DockModule } from 'primeng/dock';
 import { ButtonModule } from 'primeng/button';
 import { MenuItem } from 'primeng/api';
 import { TimelineModule } from 'primeng/timeline';
+import { faUser, faBriefcase, faGraduationCap, faAward } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -112,11 +113,28 @@ export class ProfileComponent implements OnInit {
 
   setupDockItems() {
     this.items = [
-      { label: 'About me', icon: 'https://www.themarketingsage.com/wp-content/uploads/2015/08/about-me-leon-severan-we-buy-houses.jpg', target: 'about' },
-      { label: 'Experience', icon: '/assets/docker/experience.png', target: 'experience' },
-      { label: 'Skills', icon: '/assets/docker/skills.png', target: 'skills' },
-      { label: 'Award', icon: '/assets/docker/award.png', target: 'award' }
+      {
+        label: 'About me',
+        faIcon: faUser,  // FontAwesome icon
+        target: 'about'
+      },
+      {
+        label: 'Experience',
+        faIcon: faBriefcase,  // FontAwesome icon
+        target: 'experience'
+      },
+      {
+        label: 'Skills',
+        faIcon: faGraduationCap,  // FontAwesome icon
+        target: 'skills'
+      },
+      {
+        label: 'Award',
+        faIcon: faAward,  // FontAwesome icon
+        target: 'award'
+      }
     ];
+    
   }
 
   getSkillCategories() {

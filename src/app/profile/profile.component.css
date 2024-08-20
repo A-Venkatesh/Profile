@@ -250,14 +250,6 @@ p-avatar {
   /* Adjust the height */
 }
 
-:host ::ng-deep .p-dock-left .p-dock-item img {
-  width: 80%;
-  /* Ensure the image fits within the dock item */
-  height: auto;
-  /* Maintain aspect ratio */
-  object-fit: contain;
-  /* Preserve the aspect ratio of the image */
-}
 
 :host ::ng-deep .p-dock-item-title {
   text-align: center;
