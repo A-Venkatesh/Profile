@@ -178,7 +178,6 @@
     </mat-card>
 
     <!-- Education Section -->
-
     <mat-card id="education" class="profile-card" [@fadeIn]>
       <mat-card-content>
         <p-fieldset>
@@ -189,21 +188,27 @@
             </div>
           </ng-template>
           <div *ngFor="let edu of profile.education" class="education-item">
-            <h3>{{ edu.degree }}</h3>
-            <h4>{{ edu.major}}</h4>
-            <a [href]="edu.institution.website"><p-avatar [image]="edu.institution.logo" shape="circle" />
-              {{ edu.institution.name }}</a>
-            <p>{{ edu.institution.location }}</p>
-            <p>{{ edu.duration }}</p>
-            <p> {{ edu.location}}</p>
+            <h3 class="education-degree">{{ edu.degree }}</h3>
+            <h4 class="education-major">{{ edu.major }}</h4>
+            <div class="institution-info">
+              <a [href]="edu.institution.website" class="institution-link">
+                <p-avatar [image]="edu.institution.logo" shape="circle" size="large"></p-avatar>
+                <span class="institution-name">{{ edu.institution.name }}</span>
+              </a>
+            </div>
+            <div class="icon-text">
+              <mat-icon aria-hidden="false">place</mat-icon>
+              <p>{{ edu.institution.location }}</p>
+            </div>
+            <div class="icon-text">
+              <mat-icon aria-hidden="false">event</mat-icon>
+              <p>{{ edu.duration }}</p>
+            </div>
           </div>
-
-
         </p-fieldset>
-
       </mat-card-content>
     </mat-card>
-
+    
     <!-- Awards Section -->
 
     <mat-card id="awards" class="profile-card" [@fadeIn]>

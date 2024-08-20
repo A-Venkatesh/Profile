@@ -327,3 +327,69 @@ p-avatar {
 :host ::ng-deep .card .p-fieldset-legend {
   margin: 5px;
 }
+
+.education-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align content to the left */
+  padding: 15px 0;
+}
+
+.education-degree,
+.education-major {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.institution-info {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.institution-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.icon-text {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.icon-text mat-icon {
+  margin-right: 8px;
+}
+.education-degree {
+  font-size: 1.5rem; /* Increase font size for degree */
+  font-weight: bold; /* Make degree bold */
+  color: #333; /* Darker color for contrast */
+  margin-bottom: 5px; /* Space between degree and major */
+}
+
+.education-major {
+  font-size: 1.25rem; /* Slightly larger font size for major */
+  font-weight: 500; /* Semi-bold for emphasis */
+  color: #555; /* Lighter color than degree for contrast */
+  margin-bottom: 15px; /* Add more space below the major */
+}
+
+.institution-name {
+  margin-left: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #5a5a5a;
+}
+
+.institution-link:hover .institution-name {
+  color: #0073e6; /* Change color on hover to make it interactive */
+  text-decoration: underline; /* Add underline on hover */
+}
+
+.icon-text p {
+  font-size: 1rem; /* Standardize text size for other details */
+  color: #777; /* Lighter text for secondary details */
+}
