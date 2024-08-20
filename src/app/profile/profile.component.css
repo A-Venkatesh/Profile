@@ -385,3 +385,8 @@ p-avatar {
   font-size: 1rem; /* Standardize text size for other details */
   color: #777; /* Lighter text for secondary details */
 }
+
+:host ::ng-deep .grayscale-chip .ng-star-inserted img {
+  /* filter: grayscale(100%); */
+}
+

@@ -88,9 +88,12 @@
                 </div>
                 <mat-divider></mat-divider>
                 <div *ngIf="isString(profile.skills[skillCategory][0])">
-                  <p-chip *ngFor="let skill of profile.skills[skillCategory]" [label]="skill"
-                    [image]="getSkillImage(skill)" [alt]="skill" />
-                </div>
+                  <p-chip *ngFor="let skill of profile.skills[skillCategory]" 
+                          [label]="skill"
+                          [image]="getSkillImage(skill)" 
+                          [alt]="skill"
+                          class="grayscale-chip" />
+                </div>                
                 <div *ngIf="!isString(profile.skills[skillCategory][0])">
                   <div *ngFor="let skill of profile.skills[skillCategory]">
                     <div *ngIf="!isString(skill)">
@@ -99,7 +102,7 @@
                         <strong>{{ skill.name }}:</strong>
                       </div>
                       <div>
-                        <p-chip *ngFor="let detail of skill.details" [label]="detail" [image]="getSkillImage(detail)"
+                        <p-chip *ngFor="let detail of skill.details" [label]="detail" [image]="getSkillImage(detail)" class="grayscale-chip"
                           [alt]="detail" />
                       </div>
                     </div>
