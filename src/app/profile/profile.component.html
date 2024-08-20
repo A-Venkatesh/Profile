@@ -99,7 +99,8 @@
                         <strong>{{ skill.name }}:</strong>
                       </div>
                       <div>
-                        <p-chip *ngFor="let detail of skill.details" [label]="detail" [image]="getSkillImage(detail)" [alt]="detail" />
+                        <p-chip *ngFor="let detail of skill.details" [label]="detail" [image]="getSkillImage(detail)"
+                          [alt]="detail" />
                       </div>
                     </div>
                     <div *ngIf="isString(skill)">
@@ -130,7 +131,7 @@
               <ng-template pTemplate="header">
                 <div class="flex align-items-center gap-2">
                   <p-avatar [image]="job.logo" size="large" shape="circle" />
-                  <span class="font-bold">{{ job.company }} {{ job.duration }}</span>
+                  <span class="font-bold">{{ job.company }}</span>
                 </div>
               </ng-template>
               <div class="project-content">
@@ -143,8 +144,7 @@
                       <p-fieldset class="marginBottom">
                         <ng-template pTemplate="header">
                           <div class="flex align-items-center gap-2 px-2">
-                            <span class="font-bold">{{event.client}} | {{ event.projectTitle }}|
-                              {{event.duration}}</span>
+                            <span class="font-bold">{{event.client}} | {{ event.projectTitle }}</span>
                           </div>
                         </ng-template>
                         <ul>
@@ -159,7 +159,9 @@
                       </p-fieldset>
                     </ng-template>
                     <ng-template pTemplate="opposite" let-event>
-                      {{event.duration}}
+                      <div>{{event.duration.from}}</div>
+                      -
+                      <div>{{event.duration.to}}</div>
                     </ng-template>
                   </p-timeline>
                 </div>

@@ -218,6 +218,7 @@ mat-divider {
   /* Removes any default margin */
   margin-bottom: 0;
   /* Removes any default margin */
+  text-align: center;
 }
 
 p-avatar {

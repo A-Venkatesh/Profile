@@ -43,12 +43,18 @@ export class ProfileService {
     experience: [
       {
         company: 'HTC Global Services',
-        duration: '04/2021 – 04/2024',
+        duration: {
+          from:'04/2021',
+          to:'04/2024'
+        },
         logo: 'https://image-service.leadiq.com/companylogo?linkedinId=201351',
         projects: [
           {
             projectTitle: 'API Platform Enablement',
-            duration: '04/2021 – 04/2024',
+            duration: {
+              from:'04/2021',
+              to:'04/2024'
+            },
             client: 'Ford',
             logo: 'https://pbs.twimg.com/profile_images/1390283337055490048/Dt5ZJBL6_400x400.png',
             responsibilities: [
@@ -70,12 +76,18 @@ export class ProfileService {
       },
       {
         company: 'Cognizant, India',
-        duration: '12/2017 – 04/2021',
+        duration: {
+          from:'12/2017',
+          to:'04/2021'
+        },
         logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvsa_q5ZQjUEN7pcn7aQ6mOev0DYcJWfWIZA&s',
         projects: [
           {
             projectTitle: 'Microservices for BPM',
-            duration: '07/2020 – 04/2021',
+            duration: {
+              from:'07/2020',
+              to:'04/2021'
+            },
             client: 'Verizon',
             logo: 'https://assets.simon.com/tenantlogos/6461.png',
             responsibilities: [
@@ -87,7 +99,10 @@ export class ProfileService {
           },
           {
             projectTitle: 'Mainframe to Micro-service migration',
-            duration: '01/2020 – 06/2020',
+            duration: {
+              from:'01/2020',
+              to:'06/2020'
+            },
             client: 'Direct Line Group',
             logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPJaZcviKeVz0qqm_IyaFtQwFSaoEEpVkq0A&s',
             responsibilities: [
@@ -98,7 +113,10 @@ export class ProfileService {
           },
           {
             projectTitle: 'SRI Application Improvement',
-            duration: '08/2018 – 12/2019',
+            duration: {
+              from:'08/2018',
+              to:'12/2019'
+            },
             client: 'Direct Line Group',
             logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPJaZcviKeVz0qqm_IyaFtQwFSaoEEpVkq0A&s',
             responsibilities: [
@@ -110,7 +128,10 @@ export class ProfileService {
           },
           {
             projectTitle: 'GDPR eCRM',
-            duration: '12/2017 – 07/2018',
+            duration: {
+              from:'12/2017',
+              to:'07/2018'
+            },
             client: 'Direct Line Group',
             logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPJaZcviKeVz0qqm_IyaFtQwFSaoEEpVkq0A&s',
             responsibilities: [
