@@ -81,7 +81,7 @@
           <!-- Skills Section -->
           <div class="skills-columns">
             <div *ngFor="let column of getSkillColumns()" class="skills-column">
-              <div *ngFor="let skillCategory of column">
+              <div *ngFor="let skillCategory of column" class="skills-section">
                 <div class="icon-text">
                   <mat-icon aria-hidden="false">{{ skillIcons[skillCategory] }}</mat-icon>
                   <h5 class="skills-heading">{{ skillCategory }}</h5>

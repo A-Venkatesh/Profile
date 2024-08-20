@@ -197,9 +197,12 @@ mat-divider {
   /* Adjust this value as needed for the desired space */
 }
 
-.p-chip {
-  font-size: 0.85em;
+:host ::ng-deep .p-chip {
+  font-size: 1em;
   /* Adjust font size for the chips to match other text */
+  margin-right: 5px;
+  margin-bottom: 5px ;
+  padding: 0rem 0.75rem;
 }
 
 .flex {
@@ -318,4 +321,8 @@ p-avatar {
 
 :host ::ng-deep .p-fieldset-legend {
   margin: 15px;
+}
+
+:host ::ng-deep .card .p-fieldset-legend {
+  margin: 5px;
 }
