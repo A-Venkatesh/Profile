@@ -5,10 +5,10 @@ import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import {MatDividerModule} from '@angular/material/divider';
+import { MatDividerModule } from '@angular/material/divider';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
-import {MatChipsModule} from '@angular/material/chips';
+import { MatChipsModule } from '@angular/material/chips';
 import { FieldsetModule } from 'primeng/fieldset';
 import { AvatarModule } from 'primeng/avatar';
 import { PanelModule } from 'primeng/panel';
@@ -93,7 +93,7 @@ export class ProfileComponent implements OnInit {
     private profileService: ProfileService,
     private activatedRoute: ActivatedRoute,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.profile = this.profileService.getProfile();
@@ -160,12 +160,12 @@ export class ProfileComponent implements OnInit {
     const categories = this.getSkillCategories();
     const numberOfColumns = Math.min(3, categories.length); // Maximum 3 columns
     const columns: any[][] = Array.from({ length: numberOfColumns }, () => []);
-  
+
     categories.forEach((category, index) => {
       columns[index % numberOfColumns].push(category);
     });
-  
+
     return columns;
   }
-  
+
 }

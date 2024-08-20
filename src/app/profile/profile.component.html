@@ -36,12 +36,12 @@
     </mat-card>
     <!-- About Section -->
     <mat-card class="profile-card" [@fadeIn]>
-      <mat-card-content> 
+      <mat-card-content>
         <p-fieldset>
           <ng-template pTemplate="header">
             <div class="flex align-items-center gap-2 px-2">
               <mat-icon aria-hidden="false">person</mat-icon>
-          <mat-card-title>About</mat-card-title>
+              <mat-card-title>About</mat-card-title>
             </div>
           </ng-template>
           <div class="about-content">
@@ -60,7 +60,7 @@
               <mat-card-title>Technical Skills</mat-card-title>
             </div>
           </ng-template>
-    
+
           <!-- Skills Section -->
           <div class="skills-columns">
             <div *ngFor="let column of getSkillColumns()" class="skills-column">
@@ -71,8 +71,8 @@
                 </div>
                 <mat-divider></mat-divider>
                 <div *ngIf="isString(profile.skills[skillCategory][0])">
-                  <p-chip *ngFor="let skill of profile.skills[skillCategory]" [label]="skill" [image]="getSkillImage(skill)"
-                    [alt]="skill" />
+                  <p-chip *ngFor="let skill of profile.skills[skillCategory]" [label]="skill"
+                    [image]="getSkillImage(skill)" [alt]="skill" />
                 </div>
                 <div *ngIf="!isString(profile.skills[skillCategory][0])">
                   <div *ngFor="let skill of profile.skills[skillCategory]">
@@ -95,131 +95,118 @@
         </p-fieldset>
       </mat-card-content>
     </mat-card>
-    
 
-         <!-- Work Experience Section -->
-         <mat-card id="experience" class="profile-card" [@fadeIn]>
-          <mat-card-content>
-            <p-fieldset>
+
+    <!-- Work Experience Section -->
+    <mat-card id="experience" class="profile-card" [@fadeIn]>
+      <mat-card-content>
+        <p-fieldset>
+          <ng-template pTemplate="header">
+            <div class="flex align-items-center gap-2 px-2">
+              <mat-icon aria-hidden="false">work</mat-icon>
+              <mat-card-title>Work Experience</mat-card-title>
+            </div>
+          </ng-template>
+          <div *ngFor="let job of profile.experience">
+            <p-panel [toggleable]="true">
               <ng-template pTemplate="header">
-                <div class="flex align-items-center gap-2 px-2">
-                  <mat-icon aria-hidden="false">work</mat-icon>
-                  <mat-card-title>Work Experience</mat-card-title>
+                <div class="flex align-items-center gap-2">
+                  <p-avatar [image]="job.logo" size="large" shape="circle" />
+                  <span class="font-bold">{{ job.company }} {{ job.duration }}</span>
                 </div>
               </ng-template>
-              <div *ngFor="let job of profile.experience">
-                <p-panel [toggleable]="true">
-                  <ng-template pTemplate="header">
-                    <div class="flex align-items-center gap-2">
-                      <p-avatar
-                      [image]="job.logo"
-                        size="large" shape="circle" />
-                      <span class="font-bold">{{ job.company }} {{ job.duration }}</span>
-                    </div>
-                  </ng-template>
-                  <div class="project-content">
-                    <div class="card">
-                      <p-timeline [value]="job.projects" styleClass="customized-timeline">
-                          <ng-template pTemplate="marker" let-event>
-                            <p-avatar
-                            [image]="event.logo"
-                              shape="circle" />
-                          </ng-template>
-                          <ng-template pTemplate="content" let-event>
-                            <p-fieldset class="marginBottom">
-                              <ng-template pTemplate="header">
-                                <div class="flex align-items-center gap-2 px-2">
-                                  <!-- <p-avatar
-                                  [image]="event.logo"
-                                    shape="circle" /> -->
-                                  <span class="font-bold">{{event.client}} | {{ event.projectTitle }}| {{event.duration}}</span>
-                                </div>
-                              </ng-template>
-                              <ul>
-                                <li *ngFor="let responsibility of event.responsibilities">{{ responsibility }}</li>
-                              </ul>
-                              <!-- <p><strong>Tech Stack:</strong> {{ project.techStack.join(', ') }}</p> -->
-          
-                              <div class="card flex align-items-center gap-2 flex-wrap">
-                                <p><strong>Tech Stack:</strong></p>
-                                <p-chip [label]="tool"  *ngFor="let tool of event.techStack " />
-                            </div>
-                            </p-fieldset>
-                          </ng-template>
-                          <ng-template pTemplate="opposite" let-event>
-                            {{event.duration}}
+              <div class="project-content">
+                <div class="card">
+                  <p-timeline [value]="job.projects" styleClass="customized-timeline">
+                    <ng-template pTemplate="marker" let-event>
+                      <p-avatar [image]="event.logo" shape="circle" />
+                    </ng-template>
+                    <ng-template pTemplate="content" let-event>
+                      <p-fieldset class="marginBottom">
+                        <ng-template pTemplate="header">
+                          <div class="flex align-items-center gap-2 px-2">
+                            <span class="font-bold">{{event.client}} | {{ event.projectTitle }}|
+                              {{event.duration}}</span>
+                          </div>
                         </ng-template>
-                      </p-timeline>
-                  </div>
-  
-  
-  
-  
-                  </div>
-                </p-panel>
-              </div>
-              </p-fieldset>
-            
-          </mat-card-content>
-        </mat-card>
+                        <ul>
+                          <li *ngFor="let responsibility of event.responsibilities">{{ responsibility }}</li>
+                        </ul>
+                        <!-- <p><strong>Tech Stack:</strong> {{ project.techStack.join(', ') }}</p> -->
 
-              <!-- Education Section -->
-
-      <mat-card id="education" class="profile-card" [@fadeIn]>
-        <mat-card-content>
-          <p-fieldset>
-            <ng-template pTemplate="header">
-              <div class="flex align-items-center gap-2 px-2">
-                <mat-icon aria-hidden="false">school</mat-icon>
-                <mat-card-title>Education</mat-card-title>
-              </div>
-            </ng-template>
-            <div *ngFor="let edu of profile.education" class="education-item">
-              <h3>{{ edu.degree }}</h3>
-              <h4>{{ edu.major}}</h4>
-              <a [href]="edu.institution.website"><p-avatar
-                [image]="edu.institution.logo"
-                  shape="circle" />
-                  {{ edu.institution.name }}</a>
-              <p>{{ edu.institution.location }}</p>
-              <p>{{ edu.duration }}</p>
-              <p> {{ edu.location}}</p>
-            </div>
-            
-    
-          </p-fieldset> 
-
-        </mat-card-content>
-      </mat-card>
-
-      <!-- Awards Section -->
-
-      <mat-card id="awards" class="profile-card" [@fadeIn]>
-        <mat-card-content>
-          <p-fieldset>
-            <ng-template pTemplate="header">
-              <div class="flex align-items-center gap-2 px-2">
-                <mat-icon aria-hidden="false">star</mat-icon>
-                <mat-card-title>Awards</mat-card-title>
-              </div>
-            </ng-template>
-            <mat-chip-set>
-              <mat-chip *ngFor="let award of profile.awards">
-                <div class="icon-text">
-                  <mat-icon aria-hidden="false">emoji_events</mat-icon>
-                  <p mat-line>{{ award }}</p>
+                        <div class="card flex align-items-center gap-2 flex-wrap">
+                          <p><strong>Tech Stack:</strong></p>
+                          <p-chip [label]="tool" *ngFor="let tool of event.techStack " />
+                        </div>
+                      </p-fieldset>
+                    </ng-template>
+                    <ng-template pTemplate="opposite" let-event>
+                      {{event.duration}}
+                    </ng-template>
+                  </p-timeline>
                 </div>
-              </mat-chip>
-            </mat-chip-set>
-    
-          </p-fieldset> 
-   
 
-            
-   
-        
-        </mat-card-content>
-      </mat-card>
+
+
+
+              </div>
+            </p-panel>
+          </div>
+        </p-fieldset>
+
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Education Section -->
+
+    <mat-card id="education" class="profile-card" [@fadeIn]>
+      <mat-card-content>
+        <p-fieldset>
+          <ng-template pTemplate="header">
+            <div class="flex align-items-center gap-2 px-2">
+              <mat-icon aria-hidden="false">school</mat-icon>
+              <mat-card-title>Education</mat-card-title>
+            </div>
+          </ng-template>
+          <div *ngFor="let edu of profile.education" class="education-item">
+            <h3>{{ edu.degree }}</h3>
+            <h4>{{ edu.major}}</h4>
+            <a [href]="edu.institution.website"><p-avatar [image]="edu.institution.logo" shape="circle" />
+              {{ edu.institution.name }}</a>
+            <p>{{ edu.institution.location }}</p>
+            <p>{{ edu.duration }}</p>
+            <p> {{ edu.location}}</p>
+          </div>
+
+
+        </p-fieldset>
+
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Awards Section -->
+
+    <mat-card id="awards" class="profile-card" [@fadeIn]>
+      <mat-card-content>
+        <p-fieldset>
+          <ng-template pTemplate="header">
+            <div class="flex align-items-center gap-2 px-2">
+              <mat-icon aria-hidden="false">star</mat-icon>
+              <mat-card-title>Awards</mat-card-title>
+            </div>
+          </ng-template>
+          <mat-chip-set>
+            <mat-chip *ngFor="let award of profile.awards">
+              <div class="icon-text">
+                <mat-icon aria-hidden="false">emoji_events</mat-icon>
+                <p mat-line>{{ award }}</p>
+              </div>
+            </mat-chip>
+          </mat-chip-set>
+
+        </p-fieldset>
+      </mat-card-content>
+    </mat-card>
   </div>
 </div>
 
@@ -233,5 +220,3 @@
     </ng-template>
   </p-dock>
 </div>
-
-
