@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
+import { Profile } from './profile.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProfileService {
-  profile = {
+  profile : Profile = {
     name: 'Venkatesh Anbu Selvam',
     role: 'Full-Stack Software Engineer • Back-End Engineer • API and Cloud Engineer',
     location: 'Bronx, New York - 10463',

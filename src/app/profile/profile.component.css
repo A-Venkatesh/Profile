@@ -90,10 +90,6 @@ body {
   flex: 1 1 auto;
 }
 
-mat-icon,
-fa-icon {
-  /* margin-left: 10px; */
-}
 
 mat-card-header mat-icon,
 mat-card-header fa-icon {
@@ -235,12 +231,8 @@ p-avatar {
 }
 
 
-:host ::ng-deep {
-
-  .p-dock {
-    z-index: 1000;
-  }
-
+:host ::ng-deep .p-dock {
+  z-index: 1000; /* This can be applied globally to .p-dock */
 }
 
 :host ::ng-deep .p-dock-left .p-dock-item .p-menuitem-content .p-dock-link {
