@@ -6,18 +6,20 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
+import { ActivatedRoute, Router } from '@angular/router';
+import { MatChipsModule } from '@angular/material/chips';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { MatChipsModule } from '@angular/material/chips';
 import { FieldsetModule } from 'primeng/fieldset';
 import { AvatarModule } from 'primeng/avatar';
 import { PanelModule } from 'primeng/panel';
 import { ChipModule } from 'primeng/chip';
 import { DockModule } from 'primeng/dock';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ButtonModule } from 'primeng/button';
 import { MenuItem } from 'primeng/api';
-
 import { TimelineModule } from 'primeng/timeline';
+
+
 @Component({
   selector: 'app-profile',
   standalone: true,
@@ -34,7 +36,8 @@ import { TimelineModule } from 'primeng/timeline';
     PanelModule,
     ChipModule,
     DockModule,
-    TimelineModule
+    TimelineModule,
+    ButtonModule
   ],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css',
