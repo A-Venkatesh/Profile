@@ -18,8 +18,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 
 import { TimelineModule } from 'primeng/timeline';
-import { CardModule } from 'primeng/card';
-import { ButtonModule } from 'primeng/button';
 @Component({
   selector: 'app-profile',
   standalone: true,
@@ -157,4 +155,17 @@ export class ProfileComponent implements OnInit {
       }
     });
   }
+
+  getSkillColumns(): any[][] {
+    const categories = this.getSkillCategories();
+    const numberOfColumns = Math.min(3, categories.length); // Maximum 3 columns
+    const columns: any[][] = Array.from({ length: numberOfColumns }, () => []);
+  
+    categories.forEach((category, index) => {
+      columns[index % numberOfColumns].push(category);
+    });
+  
+    return columns;
+  }
+  
 }
