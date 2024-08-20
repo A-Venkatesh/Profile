@@ -389,3 +389,24 @@ p-avatar {
   /* filter: grayscale(100%); */
 }
 
+:host ::ng-deep .p-dock-bottom {
+  position: fixed; /* This makes the dock stay fixed on the screen */
+ 
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1); 
+}
+
+:host ::ng-deep .p-dock-left,
+:host ::ng-deep .p-dock-bottom {
+  z-index: 1000; /* Ensures the dock stays above other content */
+}
+
+:host ::ng-deep .p-dock-bottom .p-dock-item .p-menuitem-content .p-dock-link {
+  width: 100%;
+  height: 10%;
+}
+
+:host ::ng-deep .dock-window {
+  width: 100%;
+  height: 100px;
+  position: relative;
+}

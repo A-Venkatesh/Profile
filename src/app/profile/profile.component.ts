@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { ProfileService } from '../profile.service';
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 import { CommonModule } from '@angular/common';
@@ -169,6 +169,7 @@ export class ProfileComponent implements OnInit {
     this.profile = this.profileService.getProfile();
     this.setupFragmentNavigation();
     this.setupDockItems();
+    this.updateDockPosition();
   }
 
   setupFragmentNavigation() {
@@ -247,6 +248,24 @@ export class ProfileComponent implements OnInit {
     });
 
     return columns;
+  }
+
+  dockPosition: 'bottom' | 'top' | 'left' | 'right' = 'left';
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.updateDockPosition();
+  }
+
+  updateDockPosition() {
+    if (typeof window !== 'undefined') { // Check if window is defined
+      const screenWidth = window.innerWidth;
+      if (screenWidth < 990) {
+        this.dockPosition = 'bottom'; // For smaller screens
+      } else {
+        this.dockPosition = 'left'; // For larger screens
+      }
+    }
   }
 
 }

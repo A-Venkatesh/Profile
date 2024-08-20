@@ -234,11 +234,11 @@
   </div>
 </div>
 
-<div>
-  <p-dock [model]="items" position="left">
+<div class="dock-window">
+  <p-dock [model]="items" [position]="dockPosition">
     <ng-template pTemplate="item" let-item>
       <div style="text-align: center;">
-        <fa-icon [icon]="item.faIcon" size="3x" (click)="scrollToFragment(item.target)"></fa-icon>
+        <fa-icon [icon]="item.faIcon" size="3x" (click)="scrollToFragment(item.target)" width="100%" ></fa-icon>
         <div class="p-dock-item-title">{{ item.label }}</div>
       </div>
     </ng-template>
