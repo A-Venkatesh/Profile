@@ -8,14 +8,14 @@ export class ProfileService {
     name: 'Venkatesh Anbu Selvam',
     role: 'Full-Stack Software Engineer • Back-End Engineer • API and Cloud Engineer',
     location: 'Bronx, New York - 10463',
-    phone: '(929) 633-2204',
+    phone: '+1 (929) 633-2204',
     email: 'vkh@live.in',
     linkedin: 'https://www.linkedin.com/in/venkateshanbu',
     github: 'https://github.com/A-Venkatesh',
     about: 'Seasoned Full Stack Software Engineer with 6+ years of experience. I specialize in creation and development of web applications and services, covering every stage of the software development lifecycle from business analysis to testing. My expertise is in web application development, spanning from API, Java, Angular and Typescript, evidenced by contributions to Automobile, Telecom and Insurance domains. Expert in cloud platforms (Azure, GCP), DevOps (Tekton, Terraform, Jenkins, Ansible), and databases (Oracle Db, MongoDB, PostgreSQL), my skills extend to Agile methodologies, security practices, and quality assurance tools (42Crunch, SonarQube, Postman, CheckMarx).',
     skills: {
       Languages: ['Java', 'SQL', 'Typescript', 'Kotlin'],
-      Frameworks: ['SpringBoot', 'Angular', 'Node.js'],
+      Frameworks: ['Spring Boot', 'Angular', 'Node.js'],
       Testing: ['JUnit', 'Mockito'],
       CloudPlatforms: [
         { name: 'Azure', details: ['API manager', 'AD', 'Analytics', 'Cosmos DB', 'Key Vault'] },
