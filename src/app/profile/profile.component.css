@@ -33,11 +33,6 @@ body {
   /* Reduced width for the second column */
 }
 
-.about-content {
-  padding: 20px;
-  /* Added padding for the About section */
-}
-
 
 .profile-card {
   width: 80%;
@@ -319,4 +314,8 @@ p-avatar {
 .skills-column {
   display: flex;
   flex-direction: column;
+}
+
+:host ::ng-deep .p-fieldset-legend {
+  margin: 15px;
 }
