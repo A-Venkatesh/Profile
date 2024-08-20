@@ -94,11 +94,12 @@
                 <div *ngIf="!isString(profile.skills[skillCategory][0])">
                   <div *ngFor="let skill of profile.skills[skillCategory]">
                     <div *ngIf="!isString(skill)">
-                      <p-avatar [image]="getSkillImage(skill.name)" styleClass="mr-2" size="normal" shape="circle" />
-                      <strong>{{ skill.name }}:</strong>
+                      <div class="icon-text">
+                        <p-avatar [image]="getSkillImage(skill.name)" styleClass="mr-2" size="normal" shape="circle" />
+                        <strong>{{ skill.name }}:</strong>
+                      </div>
                       <div>
-                        <p-chip *ngFor="let detail of skill.details" [label]="detail" [image]="getSkillImage(detail)"
-                          [alt]="detail" />
+                        <p-chip *ngFor="let detail of skill.details" [label]="detail" [image]="getSkillImage(detail)" [alt]="detail" />
                       </div>
                     </div>
                     <div *ngIf="isString(skill)">
