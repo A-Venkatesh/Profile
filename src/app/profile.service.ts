@@ -19,10 +19,10 @@ export class ProfileService {
       Testing: ['JUnit', 'Mockito'],
       CloudPlatforms: [
         { name: 'Azure', details: ['API manager', 'AD', 'Analytics', 'Cosmos DB', 'Key Vault'] },
-        { name: 'Google Cloud Platform', details: ['Apigee', 'Cloud Functions', 'Cloud Data Fusion', 'Cloud Pub/Sub', 'Cloud Run', 'Cloud Logging', 'Cloud Storage','BigQuery', 'Cloud Secret', 'Cloud Build', 'GCP Cloud Artifacts'] },
+        { name: 'Google Cloud Platform', details: ['Apigee', 'Cloud Functions', 'Cloud Data Fusion', 'Cloud Pub/Sub', 'Cloud Run', 'Cloud Logging', 'Cloud Storage','BigQuery', 'Cloud Secret', 'Cloud Build', 'Cloud Artifacts'] },
         { name: 'Amazon Web Services', details: ['Lambda', 'S3', 'EC2'] }
       ],
-      Web: ['HTML', 'CSS', 'Material'],
+      Web: ['HTML', 'CSS', 'Material', 'PrimeNG'],
       DatabaseSystems: ['Oracle Db', 'MongoDB', 'PostgreSQL', 'BigQuery'],
       OperatingSystems: ['Unix', 'Linux'],
       VersionControl: ['GIT (GitHub and Bitbucket)', 'SVN (Tortoise)'],

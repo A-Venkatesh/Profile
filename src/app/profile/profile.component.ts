@@ -87,30 +87,74 @@ export class ProfileComponent implements OnInit {
   };
 
   skillImages: { [key: string]: string } = {
-    'ad': 'assets/logos/ad.svg',
-    'amazon-web-services': 'assets/logos/amazon-web-services.svg',
-    'analytics': 'assets/logos/analytics.svg',
-    'angular': 'assets/logos/angular.svg',
-    'api-manager': 'assets/logos/api-manager.svg',
-    'apigee': 'assets/logos/apigee.svg',
-    'azure': 'assets/logos/azure.svg',
-    'bigquery': 'assets/logos/bigquery.svg',
-    'cloud-data-fusion': 'assets/logos/cloud-data-fusion.svg',
-    'cloud-functions': 'assets/logos/cloud-functions.svg',
-    'cloud-logging': 'assets/logos/cloud-logging.svg',
-    'cloud-pubsub': 'assets/logos/cloud-pub-sub.svg', // assuming ':' is replaced with '-'
-    'cloud-storage': 'assets/logos/cloud-storage.svg',
-    'cosmos-db': 'assets/logos/cosmos-db.svg',
-    'google-cloud-platform': 'assets/logos/google-cloud-platform.svg',
-    'java': 'assets/logos/java.svg',
-    'junit': 'assets/logos/junit.svg',
-    'key-vault': 'assets/logos/key-vault.svg',
-    'kotlin': 'assets/logos/kotlin.svg',
-    'node.js': 'assets/logos/node.js.svg', // assuming '.' is used in the file name
-    'spring-boot': 'assets/logos/spring-boot.svg',
-    'sql': 'assets/logos/sql.svg',
-    'typescript': 'assets/logos/typescript.svg'
+    '42crunch': '42crunch.svg',
+    ad: 'ad.svg',
+    'amazon-web-services': 'amazon-web-services.svg',
+    analytics: 'analytics.svg',
+    angular: 'angular.svg',
+    ansible: 'ansible.svg',
+    'api-manager': 'api-manager.svg',
+    apigee: 'apigee.svg',
+    azure: 'azure.svg',
+    bigquery: 'bigquery.svg',
+    checkmarx: 'checkmarx.svg',
+    'cloud-data-fusion': 'cloud-data-fusion.svg',
+    'cloud-functions': 'cloud-functions.svg',
+    'cloud-logging': 'cloud-logging.svg',
+    'cloud-pub-sub': 'cloud-pub-sub.svg',
+    'cloud-storage': 'cloud-storage.svg',
+    cloudbuild: 'cloudbuild.svg',
+    'cosmos-db': 'cosmos-db.svg',
+    css: 'css.svg',
+    docker: 'Docker.svg',
+    ec2: 'EC2.svg',
+    eclipse: 'Eclipse.svg',
+    firebase: 'firebase.svg',
+    fossa: 'fossa.svg',
+    git: 'git.svg',
+    'git-(github-and-bitbucket)': 'git.svg',
+    'google-cloud-platform': 'google-cloud-platform.svg',
+    gradle: 'gradle.svg',
+    grafana: 'grafana.svg',
+    hibernate: 'hibernate.svg',
+    html: 'html.svg',
+    intellij: 'IntelliJ.svg',
+    java: 'java.svg',
+    jenkins: 'jenkins.svg',
+    jfrog: 'jfrog.svg',
+    jira: 'JIRA.svg',
+    junit: 'junit.svg',
+    kafka: 'kafka.svg',
+    'key-vault': 'key-vault.svg',
+    kotlin: 'kotlin.svg',
+    lambda: 'lambda.svg',
+    linux: 'Linux.svg',
+    maven: 'maven.svg',
+    mongodb: 'mongodb.svg',
+    'native-script': 'nativescript.svg',
+    nexus: 'nexus.svg',
+    'node.js': 'node.js.svg',
+    'oracle-db': 'oracle-db.svg',
+    'pivotal-cloud-foundry': 'pivotal-cloud-foundry.svg',
+    postgresql: 'postgresql.svg',
+    postman: 'postman.svg',
+    primeng: 'primeng.svg',
+    s3: 's3.svg',
+    sonarqube: 'sonarqube.svg',
+    splunk: 'splunk.svg',
+    'spring-boot': 'spring-boot.svg',
+    sql: 'sql.svg',
+    svn: 'svn.svg',
+    'svn-(tortoise)': 'svn.svg',
+    tekton: 'tekton.svg',
+    terraform: 'terraform.svg',
+    tomcat: 'tomcat.svg',
+    typescript: 'typescript.svg',
+    webstorm: 'WebStorm.svg',
+    xml: 'XML.svg'
   };
+  
+  
   
 
   defaultSkillImage = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyAWmAe5UBdinr66fGFYymYvFCenoK9pizhg&s';
@@ -174,9 +218,11 @@ export class ProfileComponent implements OnInit {
   getSkillImage(skill: string): string {
     const basePath = 'assets/logos/';
     const skillNameVariations = skill.toLowerCase().replace(/\s+/g, '-');
-
-    return this.skillImages[skillNameVariations] || this.defaultSkillImage;
+  
+    // Append the basePath to the found skill image or return the default image
+    return this.skillImages[skillNameVariations] ? `${basePath}${this.skillImages[skillNameVariations]}` : this.defaultSkillImage;
   }
+  
 
   jumpToSection(section: string | null) {
     if (section) document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
