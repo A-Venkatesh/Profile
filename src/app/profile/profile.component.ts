@@ -166,7 +166,7 @@ export class ProfileComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.profile = this.profileService.getProfile();
+    this.profile = this.profileService.getProfile("venkatesh");
     this.setupFragmentNavigation();
     this.setupDockItems();
     this.updateDockPosition();
