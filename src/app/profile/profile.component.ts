@@ -1,13 +1,17 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { NgOptimizedImage } from '@angular/common'
+import { Component, OnInit } from '@angular/core';
 import { ProfileService } from './service/profile.service';
-import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
+import { DockService } from './service/dock.service';
+import { NavigationService } from './service/navigation.service';
+import { LayoutService } from './service/layout.service';
+import { SkillService } from './service/skill.service';
+import { AnimationService } from './service/animation.service';
+import { MenuItem } from 'primeng/api';
+import { NgOptimizedImage } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
-import { ActivatedRoute, Router } from '@angular/router';
 import { MatChipsModule } from '@angular/material/chips';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -17,10 +21,8 @@ import { PanelModule } from 'primeng/panel';
 import { ChipModule } from 'primeng/chip';
 import { DockModule } from 'primeng/dock';
 import { ButtonModule } from 'primeng/button';
-import { MenuItem } from 'primeng/api';
 import { TimelineModule } from 'primeng/timeline';
-import { faUser, faBriefcase, faGraduationCap, faAward, faMicrochip } from '@fortawesome/free-solid-svg-icons';
-
+import { trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-profile',
@@ -43,22 +45,10 @@ import { faUser, faBriefcase, faGraduationCap, faAward, faMicrochip } from '@for
     ButtonModule
   ],
   templateUrl: './profile.component.html',
-  styleUrl: './profile.component.css',
+  styleUrls: ['./profile.component.css'],
   animations: [
-    trigger('fadeIn', [
-      state('void', style({ opacity: 0 })),
-      transition(':enter', [animate('1s ease-in')])
-    ]),
-    trigger('slideIn', [
-      state('void', style({ transform: 'translateX(-100%)' })),
-      transition(':enter', [
-        animate('1s ease-out', keyframes([
-          style({ transform: 'translateX(-100%)', offset: 0 }),
-          style({ transform: 'translateX(15px)', offset: 0.3 }),
-          style({ transform: 'translateX(0)', offset: 1.0 })
-        ]))
-      ])
-    ])
+    trigger('fadeIn', new AnimationService().getFadeInAnimation().definitions),
+    trigger('slideIn', new AnimationService().getSlideInAnimation().definitions)
   ]
 })
 export class ProfileComponent implements OnInit {
@@ -66,244 +56,51 @@ export class ProfileComponent implements OnInit {
   faLinkedin = faLinkedin;
   faGithub = faGithub;
   items: MenuItem[] | undefined;
-
-  skillIcons: { [key: string]: string } = {
-    Languages: 'language',
-    Frameworks: 'settings',
-    Testing: 'bug_report',
-    'Cloud Platforms': 'cloud',
-    Web: 'web',
-    'Database Systems': 'storage',
-    OperatingSystems: 'computer',
-    'Version Control': 'history',
-    'DevOps Tools': 'build',
-    QualityAssurance: 'verified',
-    SiteReliability: 'insights',
-    MobileDevelopment: 'phone_android',
-    'Build Tools': 'build_circle',
-    Artifactory: 'archive',
-    DataFormats: 'data_usage',
-    DevelopmentTools: 'code',
-    DevelopmentPractice: 'engineering',
-    Others: 'more_horiz'
-  };
-  skillImages: { [key: string]: string } = {
-    '42crunch': '42crunch.svg',
-    ad: 'ad.svg',
-    'amazon-web-services': 'amazon-web-services.svg',
-    aws: 'amazon-web-services.svg',
-    analytics: 'analytics.svg',
-    angular: 'angular.svg',
-    ansible: 'ansible.svg',
-    'microsoft-sql-server': 'Microsoft-SQL-Server.svg',
-    'api-manager': 'api-manager.svg',
-    apigee: 'apigee.svg',
-    azure: 'azure.svg',
-    bigquery: 'bigquery.svg',
-    checkmarx: 'checkmarx.svg',
-    'cloud-data-fusion': 'cloud-data-fusion.svg',
-    'cloud-functions': 'cloud-functions.svg',
-    'cloud-logging': 'cloud-logging.svg',
-    'cloud-pub-sub': 'cloud-pub-sub.svg',
-    'cloud-storage': 'cloud-storage.svg',
-    'cloud-build': 'cloud-build.svg',
-    'cosmos-db': 'cosmos-db.svg',
-    css: 'css.svg',
-    default: 'default.svg',
-    docker: 'Docker.svg',
-    ec2: 'ec2.svg',
-    eclipse: 'Eclipse.svg',
-    firebase: 'firebase.svg',
-    fossa: 'fossa.svg',
-    git: 'git.svg',
-    'git-(github-and-bitbucket)': 'git.svg',
-    'google-cloud-platform': 'google-cloud-platform.svg',
-    gcp: 'google-cloud-platform.svg',
-    gradle: 'gradle.svg',
-    grafana: 'grafana.svg',
-    hibernate: 'hibernate.svg',
-    html: 'html.svg',
-    intellij: 'IntelliJ.svg',
-    java: 'java.svg',
-    jenkins: 'jenkins.svg',
-    jfrog: 'jfrog.svg',
-    jira: 'JIRA.svg',
-    junit: 'junit.svg',
-    kafka: 'kafka.svg',
-    'key-vault': 'key-vault.svg',
-    kotlin: 'kotlin.svg',
-    lambda: 'lambda.svg',
-    linux: 'Linux.svg',
-    maven: 'maven.svg',
-    mongodb: 'mongodb.svg',
-    'native-script': 'nativescript.svg',
-    nexus: 'nexus.svg',
-    'node.js': 'node.js.svg',
-    'oracle-db': 'oracle-db.svg',
-    'pivotal-cloud-foundry': 'pivotal-cloud-foundry.svg',
-    postgresql: 'postgresql.svg',
-    postman: 'postman.svg',
-    primeng: 'primeng.svg',
-    python: 'python.svg',
-    s3: 's3.svg',
-    sonarqube: 'sonarqube.svg',
-    splunk: 'splunk.svg',
-    'spring-boot': 'spring.svg',
-    springboot: 'spring.svg',
-    'spring-mvc': 'spring.svg',
-    'spring-data-jpa': 'spring.svg',
-    sql: 'sql.svg',
-    svn: 'svn.svg',
-    'svn-(tortoise)': 'svn.svg',
-    tekton: 'tekton.svg',
-    terraform: 'terraform.svg',
-    tomcat: 'tomcat.svg',
-    typescript: 'typescript.svg',
-    webstorm: 'WebStorm.svg',
-    xml: 'XML.svg',
-    'api-gateway': 'api-gateway.svg',
-    'cloud-container': 'cloud-container.svg',
-    'container-registry': 'cloud-container.svg',
-    'cloud-run': 'cloud-run.svg',
-    cloudfront: 'cloudfront.svg',
-    cognito: 'cognito.svg',
-    iam: 'iam.svg',
-    rds: 'rds.svg',
-    sns: 'sns.svg',
-    'swagger-svgrepo-com': 'swagger-svgrepo-com.svg',
-    swagger: 'swagger.svg',
-  };
-  
+  dockPosition: 'bottom' | 'top' | 'left' | 'right' = 'left';
+  skillIcons: { [key: string]: string }
 
   constructor(
     private profileService: ProfileService,
-    private activatedRoute: ActivatedRoute,
-    private router: Router
-  ) { }
+    private dockService: DockService,
+    private navigationService: NavigationService,
+    private layoutService: LayoutService,
+    private skillService: SkillService
+  ) { 
+    this.skillIcons = this.getSkillIcons();
+  }
 
   ngOnInit() {
+    
     this.profile = this.profileService.getProfile("neha");
-    this.setupFragmentNavigation();
-    this.setupDockItems();
-    this.updateDockPosition();
+    this.items = this.dockService.getDockItems(this.profile);
+    this.dockPosition = this.layoutService.dockPosition;
   }
-
-  setupFragmentNavigation() {
-    this.activatedRoute.fragment.subscribe(fragment => {
-      if (fragment) this.jumpToSection(fragment);
-    });
-  }
-
-  setupDockItems() {
-    this.profile = this.profileService.getProfile("neha");  // Fetch the profile data
-  
-    this.items = [
-      {
-        label: 'About me',
-        faIcon: faUser,  // FontAwesome icon
-        target: 'about'
-      }
-    ];
-  
-    if (this.profile.skills && Object.keys(this.profile.skills).length > 0) {
-      this.items.push({
-        label: 'Skills',
-        faIcon: faMicrochip,  // FontAwesome icon
-        target: 'skills'
-      });
-    }
-  
-    if (this.profile.experience && this.profile.experience.length > 0) {
-      this.items.push({
-        label: 'Experience',
-        faIcon: faBriefcase,  // FontAwesome icon
-        target: 'experience'
-      });
-    }
-  
-    if (this.profile.education && this.profile.education.length > 0) {
-      this.items.push({
-        label: 'Education',
-        faIcon: faGraduationCap,  // FontAwesome icon
-        target: 'education'
-      });
-    }
-  
-    if (this.profile.awards && this.profile.awards.length > 0) {
-      this.items.push({
-        label: 'Awards',
-        faIcon: faAward,  // FontAwesome icon
-        target: 'awards'
-      });
-    }
-  }
-  
-
-  getSkillCategories() {
-    return Object.keys(this.profile.skills);
-  }
-
-  isString(value: any): boolean {
-    return typeof value === 'string';
-  }
-
-  getSkillImage(skill: string): string {
-    const basePath = 'assets/logos/';
-    const skillNameVariations = skill.toLowerCase().replace(/\s+/g, '-');
-  
-    // Append the basePath to the found skill image or return the default image
-    return this.skillImages[skillNameVariations] ? `${basePath}${this.skillImages[skillNameVariations]}` : `${basePath}${this.skillImages['default']}`;
-  }
-  
 
   jumpToSection(section: string | null) {
-    if (section) document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+    this.navigationService.jumpToSection(section);
   }
 
   scrollToFragment(fragment: string) {
-    this.router.navigate(['/home'], { fragment }).then(() => {
-      const element = document.getElementById(fragment);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
+    this.navigationService.scrollToFragment(fragment);
+  }
+
+  onResize(event: any) {
+    this.layoutService.updateDockPosition();
   }
 
   getSkillColumns(): any[][] {
-    // Get the categories, but filter out those with empty arrays
-    const categories = this.getSkillCategories().filter(category => this.profile.skills[category].length > 0);
-    
-    // Determine the number of columns, with a maximum of 3
-    const numberOfColumns = Math.min(3, categories.length);
-    
-    // Create an array of columns
-    const columns: any[][] = Array.from({ length: numberOfColumns }, () => []);
-  
-    // Distribute categories into the columns
-    categories.forEach((category, index) => {
-      columns[index % numberOfColumns].push(category);
-    });
-  
-    return columns;
-  }
-  
-
-  dockPosition: 'bottom' | 'top' | 'left' | 'right' = 'left';
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    this.updateDockPosition();
+    return this.skillService.getSkillColumns(this.profile.skills);
   }
 
-  updateDockPosition() {
-    if (typeof window !== 'undefined') { // Check if window is defined
-      const screenWidth = window.innerWidth;
-      if (screenWidth < 990) {
-        this.dockPosition = 'bottom'; // For smaller screens
-      } else {
-        this.dockPosition = 'left'; // For larger screens
-      }
-    }
+  getSkillImage(skill: string): string {
+    return this.skillService.getSkillImage(skill);
   }
 
+  getSkillIcons() {
+    return this.skillService.getSkillIcons();
+  }
+
+  isString(value: any): boolean {
+    return this.skillService.isString(value);
+  }
 }
