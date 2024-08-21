@@ -49,6 +49,7 @@ export interface SkillDetails {
     linkedin: string;
     github: string;
     about: string;
+    displayPicture: string;
     skills: {
       Languages: string[];
       Frameworks: string[];

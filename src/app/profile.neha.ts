@@ -9,6 +9,7 @@ export const neha: Profile = {
   email: 'nsg2057@nyu.edu',
   linkedin: 'https://www.linkedin.com/in/nehagalla',
   github: 'https://github.com/Nsg2057',
+  displayPicture: 'https://media.licdn.com/dms/image/v2/D4E03AQGPBJ0cZ-D8sw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1689957477358?e=1729728000&v=beta&t=aZgbb-GCBd5TTmPY83WBjfqmOv05NjycZ1L-pv0lgn4',
   about: `Results-driven Software Engineer with 4 years of experience and a master’s degree in computer science with a strong foundation in computer science, excelling in data structures and algorithms, Machine Learning, Big Data, Microservices, Containerization, and Test Driven Development. Demonstrated success in developing innovative solutions, leading projects, and collaborating effectively. Completed Master of Science in Computer Science.`,
   skills: {
     Languages: ['Python', 'Java', 'SQL', 'Typescript'],

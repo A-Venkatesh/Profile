@@ -4,7 +4,7 @@
       <p-fieldset class="m-4">
         <mat-card-content>
           <div class="profile-header-content">
-            <div mat-card-avatar class="profile-avatar"></div>
+            <div mat-card-avatar class="profile-avatar" [ngStyle]="{'background-image': 'url(' + profile.displayPicture + ')'}"></div>
             <mat-card-title class="name">{{ profile.name }}</mat-card-title>
             <mat-card-subtitle class="role">{{ profile.role }}</mat-card-subtitle>
             <div class="quote">
