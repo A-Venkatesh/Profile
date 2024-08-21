@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Profile } from './profile.interface';
-import { neha } from './profile.neha';
-import { venkatesh } from './profile.venkatesh';
+import { Profile } from '../data/profile.interface';
+import { neha } from '../data/profile.neha';
+import { venkatesh } from '../data/profile.venkatesh';
 
 @Injectable({
   providedIn: 'root'

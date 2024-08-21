@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { ProfileService } from '../profile.service';
+import { ProfileService } from './service/profile.service';
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
