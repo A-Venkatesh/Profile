@@ -15,24 +15,24 @@ export const venkatesh: Profile = {
       Languages: ['Java', 'SQL', 'Typescript', 'Kotlin'],
       Frameworks: ['Spring Boot', 'Angular', 'Node.js'],
       Testing: ['JUnit', 'Mockito'],
-      CloudPlatforms: [
+      'Cloud Platforms': [
         { name: 'Azure', details: ['API manager', 'AD', 'Analytics', 'Cosmos DB', 'Key Vault'] },
         { name: 'Google Cloud Platform', details: ['Apigee', 'Cloud Functions', 'Cloud Data Fusion', 'Cloud Pub/Sub', 'Cloud Run', 'Cloud Logging', 'Cloud Storage','BigQuery', 'Cloud Secret', 'Cloud Build', 'Cloud Artifacts'] },
         { name: 'Amazon Web Services', details: ['Lambda', 'S3', 'EC2'] }
       ],
       Web: ['HTML', 'CSS', 'Material', 'PrimeNG'],
-      DatabaseSystems: ['Oracle Db', 'MongoDB', 'PostgreSQL', 'BigQuery'],
+      'Database Systems': ['Oracle Db', 'MongoDB', 'PostgreSQL', 'BigQuery'],
       OperatingSystems: ['Unix', 'Linux'],
-      VersionControl: ['GIT (GitHub and Bitbucket)', 'SVN (Tortoise)'],
-      DevOpsTools: ['Tekton', 'Terraform', 'Jenkins', 'Ansible', 'Pivotal Cloud Foundry'],
+      'Version Control': ['GIT (GitHub and Bitbucket)', 'SVN (Tortoise)'],
+      'DevOps Tools': ['Tekton', 'Terraform', 'Jenkins', 'Ansible', 'Pivotal Cloud Foundry'],
       QualityAssurance: ['SonarQube', '42Crunch', 'Fossa', 'Checkmarx', 'Postman', 'JIRA'],
       SiteReliability: ['SRE', 'Grafana', 'Health Nut'],
       MobileDevelopment: ['Native script', 'Firebase'],
-      BuildTools: ['Gradle', 'Maven'],
+      'Build Tools': ['Gradle', 'Maven'],
       Artifactory: ['JFrog', 'Nexus', 'GCP Cloud Artifacts'],
       DataFormats: ['XML', 'JSON', 'XSLT', 'YAML'],
-      DevelopmentTestingTools: ['IntelliJ', 'Eclipse', 'WebStorm', 'Postman', 'Docker'],
-      DevelopmentPractices: [
+      'Development and Testing Tools': ['IntelliJ', 'Eclipse', 'WebStorm', 'Postman', 'Docker'],
+      'Development Practices': [
         { name: 'Agile', details: ['Scrum', 'Extreme Programming', 'Pair/Mob Programming'] },
          'Test Driven Development','Behavior Driven Development'
       ],
