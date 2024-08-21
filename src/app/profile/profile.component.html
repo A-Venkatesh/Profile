@@ -147,9 +147,13 @@
                       <p-fieldset class="marginBottom">
                         <ng-template pTemplate="header">
                           <div class="flex align-items-center gap-2 px-2">
-                            <span class="font-bold">{{event.client}} | {{ event.projectTitle }}</span>
+                            <span class="font-bold">| {{ event.projectTitle }}</span>
                           </div>
                         </ng-template>
+                        <div class="card flex align-items-center gap-2 flex-wrap" *ngIf="event.client !== ''">
+                          <p><strong>Client:</strong></p>
+                          {{event.client}}
+                        </div>
                         <ul>
                           <li *ngFor="let responsibility of event.responsibilities">{{ responsibility }}</li>
                         </ul>
