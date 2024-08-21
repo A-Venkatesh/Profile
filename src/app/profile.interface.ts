@@ -2,6 +2,13 @@ export interface SkillDetails {
     name: string;
     details?: string[];
   }
+
+  export interface PersonalProject {
+    projectTitle: string;
+    responsibilities: string[];
+    techStack: string[];
+    repoURL: string;
+  }
   
   export interface ExperienceProject {
     projectTitle: string;
@@ -63,6 +70,7 @@ export interface SkillDetails {
       Others: string[];
     };
     experience: Experience[];
+    personalProjects: PersonalProject[];
     education: Education[];
     awards: string[];
   }

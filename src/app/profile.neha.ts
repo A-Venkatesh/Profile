@@ -141,6 +141,8 @@ export const neha: Profile = {
         ]
       }
     ],
+
+    personalProjects:[],
     education: [
       {
         degree: 'Bachelor of Technology',

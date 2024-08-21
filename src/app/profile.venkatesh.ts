@@ -141,6 +141,7 @@ export const venkatesh: Profile = {
         ]
       }
     ],
+    personalProjects:[],
     education: [
       {
         degree: 'Bachelor of Technology',

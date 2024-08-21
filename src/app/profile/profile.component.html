@@ -176,6 +176,44 @@
       </mat-card-content>
     </mat-card>
 
+        <!-- Personal Experience Section -->
+        <mat-card id="projects" class="profile-card" [@fadeIn] *ngIf="profile.experience.size > 0">
+          <mat-card-content>
+            <p-fieldset>
+              <ng-template pTemplate="header">
+                <div class="flex align-items-center gap-2 px-2">
+                  <mat-icon aria-hidden="false">work</mat-icon>
+                  <mat-card-title>Personal Projects</mat-card-title>
+                </div>
+              </ng-template>
+              <div *ngFor="let event of profile.experience">
+                <p-panel [toggleable]="true">
+                  <div class="project-content">
+                    <div class="card">
+                          <p-fieldset class="marginBottom">
+                            <ng-template pTemplate="header">
+                              <div class="flex align-items-center gap-2 px-2">
+                                <span class="font-bold">{{ event.projectTitle }}</span>
+                              </div>
+                            </ng-template>
+                            <ul>
+                              <li *ngFor="let responsibility of event.responsibilities">{{ responsibility }}</li>
+                            </ul>
+                            <div class="card flex align-items-center gap-2 flex-wrap">
+                              <p><strong>Tech Stack:</strong></p>
+                              <p-chip [label]="tool" *ngFor="let tool of event.techStack " />
+                            </div>
+                          </p-fieldset>
+                    </div>
+                  </div>
+                </p-panel>
+              </div>
+            </p-fieldset>
+    
+          </mat-card-content>
+        </mat-card>
+
+
     <!-- Education Section -->
     <mat-card id="education" class="profile-card" [@fadeIn]>
       <mat-card-content>
