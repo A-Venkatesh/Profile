@@ -177,7 +177,7 @@
     </mat-card>
 
         <!-- Personal Experience Section -->
-        <mat-card id="projects" class="profile-card" [@fadeIn] *ngIf="profile.experience.size > 0">
+        <mat-card id="projects" class="profile-card" [@fadeIn] *ngIf="profile.personalProjects.size > 0">
           <mat-card-content>
             <p-fieldset>
               <ng-template pTemplate="header">
@@ -186,7 +186,7 @@
                   <mat-card-title>Personal Projects</mat-card-title>
                 </div>
               </ng-template>
-              <div *ngFor="let event of profile.experience">
+              <div *ngFor="let event of profile.personalProjects">
                 <p-panel [toggleable]="true">
                   <div class="project-content">
                     <div class="card">
@@ -248,7 +248,7 @@
     
     <!-- Awards Section -->
 
-    <mat-card id="awards" class="profile-card" [@fadeIn]>
+    <mat-card id="awards" class="profile-card" [@fadeIn] *ngIf="profile.awards.size > 0">
       <mat-card-content>
         <p-fieldset>
           <ng-template pTemplate="header">

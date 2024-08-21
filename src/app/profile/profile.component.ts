@@ -239,16 +239,23 @@ export class ProfileComponent implements OnInit {
   }
 
   getSkillColumns(): any[][] {
-    const categories = this.getSkillCategories();
-    const numberOfColumns = Math.min(3, categories.length); // Maximum 3 columns
+    // Get the categories, but filter out those with empty arrays
+    const categories = this.getSkillCategories().filter(category => this.profile.skills[category].length > 0);
+    
+    // Determine the number of columns, with a maximum of 3
+    const numberOfColumns = Math.min(3, categories.length);
+    
+    // Create an array of columns
     const columns: any[][] = Array.from({ length: numberOfColumns }, () => []);
-
+  
+    // Distribute categories into the columns
     categories.forEach((category, index) => {
       columns[index % numberOfColumns].push(category);
     });
-
+  
     return columns;
   }
+  
 
   dockPosition: 'bottom' | 'top' | 'left' | 'right' = 'left';
 
