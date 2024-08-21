@@ -170,7 +170,7 @@
     </mat-card>
 
         <!-- Personal Experience Section -->
-        <mat-card id="projects" class="profile-card" [@fadeIn] *ngIf="profile.personalProjects.size > 0">
+        <mat-card id="projects" class="profile-card" [@fadeIn] *ngIf="profile.personalProjects.length > 0">
           <mat-card-content>
             <p-fieldset>
               <ng-template pTemplate="header">
@@ -241,7 +241,7 @@
     
     <!-- Awards Section -->
 
-    <mat-card id="awards" class="profile-card" [@fadeIn] *ngIf="profile.awards.size > 0">
+    <mat-card id="awards" class="profile-card" [@fadeIn] *ngIf="profile.awards.length > 0">
       <mat-card-content>
         <p-fieldset>
           <ng-template pTemplate="header">
