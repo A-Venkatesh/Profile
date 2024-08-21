@@ -82,7 +82,7 @@ export const neha: Profile = {
           projectTitle: 'BlueJeans Video Conferencing Application Enhancement',
           duration: { from: '10/2020', to: '08/2021' },
           client: 'Verizon',
-          logo: 'https://assets.simon.com/tenantlogos/6461.png',
+          logo: 'https://logowik.com/content/uploads/images/verizon-2024-v-icon80737.logowik.com.webp',
           responsibilities: [
             'Implemented a live polling feature using web sockets to enhance the BlueJeans video conferencing application.',
             'Leveraged Angular to integrate back-end APIs and create interactive front-end features.',
