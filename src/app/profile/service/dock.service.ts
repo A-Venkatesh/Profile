@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { faUser, faBriefcase, faGraduationCap, faAward, faMicrochip } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faBriefcase, faGraduationCap, faAward, faMicrochip, faProjectDiagram } from '@fortawesome/free-solid-svg-icons';
 
 @Injectable({
   providedIn: 'root',
@@ -20,6 +20,10 @@ export class DockService {
 
     if (profile.experience && profile.experience.length > 0) {
       items.push({ label: 'Experience', faIcon: faBriefcase, target: 'experience' });
+    }
+
+    if (profile.personalProjects && profile.personalProjects.length > 0) {
+      items.push({ label: 'Personal Projects', faIcon: faProjectDiagram, target: 'projects' });
     }
 
     if (profile.education && profile.education.length > 0) {
