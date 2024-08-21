@@ -195,34 +195,49 @@ export class ProfileComponent implements OnInit {
   }
 
   setupDockItems() {
+    this.profile = this.profileService.getProfile("neha");  // Fetch the profile data
+  
     this.items = [
       {
         label: 'About me',
         faIcon: faUser,  // FontAwesome icon
         target: 'about'
-      },
-      {
+      }
+    ];
+  
+    if (this.profile.skills && Object.keys(this.profile.skills).length > 0) {
+      this.items.push({
         label: 'Skills',
         faIcon: faMicrochip,  // FontAwesome icon
         target: 'skills'
-      },
-      {
+      });
+    }
+  
+    if (this.profile.experience && this.profile.experience.length > 0) {
+      this.items.push({
         label: 'Experience',
         faIcon: faBriefcase,  // FontAwesome icon
         target: 'experience'
-      },
-      {
+      });
+    }
+  
+    if (this.profile.education && this.profile.education.length > 0) {
+      this.items.push({
         label: 'Education',
         faIcon: faGraduationCap,  // FontAwesome icon
         target: 'education'
-      },
-      {
-        label: 'Award',
+      });
+    }
+  
+    if (this.profile.awards && this.profile.awards.length > 0) {
+      this.items.push({
+        label: 'Awards',
         faIcon: faAward,  // FontAwesome icon
         target: 'awards'
-      }
-    ];
+      });
+    }
   }
+  
 
   getSkillCategories() {
     return Object.keys(this.profile.skills);
