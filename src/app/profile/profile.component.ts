@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common'
 import { ProfileService } from './service/profile.service';
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 import { CommonModule } from '@angular/common';
@@ -26,6 +27,7 @@ import { faUser, faBriefcase, faGraduationCap, faAward, faMicrochip } from '@for
   standalone: true,
   imports: [
     CommonModule,
+    NgOptimizedImage,
     MatToolbarModule,
     MatCardModule,
     MatIconModule,

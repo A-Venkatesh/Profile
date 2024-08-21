@@ -7,7 +7,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* padding: 20px; */
 }
 
 .profile-columns {
@@ -15,7 +14,6 @@ body {
   width: 80%;
   justify-content: space-between;
   gap: 20px;
-  /* Added gap to balance columns */
 }
 
 .column {
@@ -25,31 +23,17 @@ body {
 
 .column:first-child {
   width: 70%;
-  /* Increased width for the first column */
 }
 
 .column:last-child {
   width: 30%;
-  /* Reduced width for the second column */
 }
-
 
 .profile-card {
   width: 80%;
   margin: 20px 0;
   border-radius: 16px;
-  /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* Soft shadow */
-}
-
-.profile-card-two {
-  width: 100%;
-  margin: 20px 0;
-  border-radius: 16px;
-  /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* Soft shadow */
 }
 
 .profile-header-content {
@@ -61,16 +45,18 @@ body {
 }
 
 .profile-avatar {
-  background-size: cover;
-  border-radius: 50%;
   width: 250px;
-  /* Larger profile picture */
   height: 250px;
-  /* Larger profile picture */
+  border-radius: 50%;
+  overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  /* Shadow for profile picture */
   margin-bottom: 16px;
-  /* Space below the profile picture */
+}
+
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .quote {
@@ -88,7 +74,6 @@ body {
 .spacer {
   flex: 1 1 auto;
 }
-
 
 mat-card-header mat-icon,
 mat-card-header fa-icon {
@@ -117,22 +102,17 @@ mat-card-header fa-icon {
 
 .skill-item p {
   font-size: 1em;
-  /* Smaller font size for subtopics */
 }
 
 .name {
   font-size: 2em;
-  /* Larger font size for the name */
   font-weight: bold;
   margin-bottom: 8px;
-  /* Space below the name */
 }
 
 .role {
   font-size: 1.5em;
-  /* Adjust the font size of the role */
   margin-bottom: 8px;
-  /* Space below the role */
 }
 
 .location {
@@ -150,7 +130,21 @@ mat-card-header fa-icon {
 
 .contact-info .icon-text {
   margin-bottom: 16px;
-  /* Space between contact info items */
+}
+
+.icon-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.icon-button {
+  transition: transform 0.3s ease;
+}
+
+.icon-button:hover {
+  transform: scale(1.1);
 }
 
 .education-card,
@@ -158,10 +152,8 @@ mat-card-header fa-icon {
   width: 100%;
 }
 
-
 .project-fieldset {
   margin-bottom: 20px;
-  /* Add gap between each fieldset */
 }
 
 h3 {
@@ -189,87 +181,66 @@ mat-list-item:hover {
 
 mat-divider {
   margin-bottom: 15px;
-  /* Adjust this value as needed for the desired space */
 }
 
 :host ::ng-deep .p-chip {
   font-size: 1em;
-  /* Adjust font size for the chips to match other text */
   margin-right: 5px;
-  margin-bottom: 5px ;
+  margin-bottom: 5px;
   padding: 0rem 0.75rem;
 }
 
 .flex {
   display: flex;
   align-items: center;
-  /* Vertically centers items within the flex container */
 }
 
 .flex .font-bold {
   line-height: 1;
-  /* Ensures that the text height is consistent */
   margin-top: 0;
-  /* Removes any default margin */
   margin-bottom: 0;
-  /* Removes any default margin */
   text-align: center;
 }
 
 p-avatar {
   margin-right: 10px;
-  /* Add space between avatar and text */
 }
 
 .icon-buttons {
   display: flex;
   justify-content: start;
   gap: 10px;
-  /* Adjust spacing between buttons */
   margin-top: 10px;
 }
 
-
 :host ::ng-deep .p-dock {
-  z-index: 1000; /* This can be applied globally to .p-dock */
+  z-index: 1000;
 }
 
 :host ::ng-deep .p-dock-left .p-dock-item .p-menuitem-content .p-dock-link {
   width: 100px;
-  /* Adjust the width */
   height: 100px;
-  /* Adjust the height */
 }
-
 
 :host ::ng-deep .p-dock-item-title {
   text-align: center;
   font-size: 0.85em;
-  /* Adjust font size */
   margin-top: 5px;
-  /* Add some space above the title */
   color: #000;
-  /* Set color for title text */
 }
 
 :host ::ng-deep .p-dock-left {
   position: fixed;
-  /* This makes the dock stay fixed on the screen */
   z-index: 1000;
-  /* Ensures the dock stays above other content */
 }
-
 
 :host ::ng-deep .mat-mdc-card-content:first-child {
   padding-top: 0px;
-
 }
 
 :host ::ng-deep .p-panel {
   border: none;
-  /* Removes the border */
   box-shadow: none;
-  /* Removes any shadow if needed */
 }
 
 :host ::ng-deep .p-timeline-event-opposite,
@@ -278,7 +249,6 @@ p-avatar {
   padding: 0 1rem;
   min-width: 10px;
   text-align: center;
-
 }
 
 :host ::ng-deep .p-fieldset .p-fieldset-legend span {
@@ -293,9 +263,7 @@ p-avatar {
 .skills-columns {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  /* Adjusts to fit up to 3 columns */
   gap: 20px;
-  /* Gap between columns */
 }
 
 .skills-column {
@@ -314,7 +282,7 @@ p-avatar {
 .education-item {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align content to the left */
+  align-items: flex-start;
 }
 
 .education-degree,
@@ -345,18 +313,19 @@ p-avatar {
 .icon-text mat-icon {
   margin-right: 8px;
 }
+
 .education-degree {
-  font-size: 1.5rem; /* Increase font size for degree */
-  font-weight: bold; /* Make degree bold */
-  color: #333; /* Darker color for contrast */
-  margin-bottom: 5px; /* Space between degree and major */
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
 }
 
 .education-major {
-  font-size: 1.25rem; /* Slightly larger font size for major */
-  font-weight: 500; /* Semi-bold for emphasis */
-  color: #555; /* Lighter color than degree for contrast */
-  margin-bottom: 15px; /* Add more space below the major */
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 15px;
 }
 
 .institution-name {
@@ -367,28 +336,27 @@ p-avatar {
 }
 
 .institution-link:hover .institution-name {
-  color: #0073e6; /* Change color on hover to make it interactive */
-  text-decoration: underline; /* Add underline on hover */
+  color: #0073e6;
+  text-decoration: underline;
 }
 
 .icon-text p {
-  font-size: 1rem; /* Standardize text size for other details */
-  color: #777; /* Lighter text for secondary details */
+  font-size: 1rem;
+  color: #777;
 }
 
-:host ::ng-deep .grayscale-chip .ng-star-inserted img {
-  /* filter: grayscale(100%); */
-}
+/* :host ::ng-deep .grayscale-chip .ng-star-inserted img {
+  filter: grayscale(100%);
+} */
 
 :host ::ng-deep .p-dock-bottom {
-  position: fixed; /* This makes the dock stay fixed on the screen */
- 
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1); 
+  position: fixed;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
 }
 
 :host ::ng-deep .p-dock-left,
 :host ::ng-deep .p-dock-bottom {
-  z-index: 1000; /* Ensures the dock stays above other content */
+  z-index: 1000;
 }
 
 :host ::ng-deep .p-dock-bottom .p-dock-item .p-menuitem-content .p-dock-link {
@@ -401,3 +369,42 @@ p-avatar {
   height: 100px;
   position: relative;
 }
+
+.icon-button:hover {
+  transform: scale(1.1);
+}
+
+.icon-button {
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 600px) {
+  .profile-card {
+    width: 100%;
+  }
+
+  .icon-buttons {
+    gap: 5px;
+  }
+
+  .p-dock-left .p-dock-item .p-menuitem-content .p-dock-link {
+    width: 80px;
+    height: 80px;
+  }
+}
+a {
+  color: inherit; /* Inherit color from the parent element */
+  text-decoration: none; /* Remove underline */
+}
+
+/* Optional: You can define specific styles for the icons if needed */
+a svg .icon-button {
+  fill: #333; /* Set the fill color of the SVG icons (you can adjust this color) */
+}
+
+
+/* On hover, you can keep the color or change it as desired */
+a:hover svg {
+  fill: #555; /* Optional: Change the fill color on hover */
+}
+
