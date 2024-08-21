@@ -85,7 +85,6 @@ export class ProfileComponent implements OnInit {
     DevelopmentPractice: 'engineering',
     Others: 'more_horiz'
   };
-
   skillImages: { [key: string]: string } = {
     '42crunch': '42crunch.svg',
     ad: 'ad.svg',
@@ -105,11 +104,12 @@ export class ProfileComponent implements OnInit {
     'cloud-logging': 'cloud-logging.svg',
     'cloud-pub-sub': 'cloud-pub-sub.svg',
     'cloud-storage': 'cloud-storage.svg',
-    cloudbuild: 'cloudbuild.svg',
+    'cloud-build': 'cloud-build.svg',
     'cosmos-db': 'cosmos-db.svg',
     css: 'css.svg',
+    default: 'default.svg',
     docker: 'Docker.svg',
-    ec2: 'EC2.svg',
+    ec2: 'ec2.svg',
     eclipse: 'Eclipse.svg',
     firebase: 'firebase.svg',
     fossa: 'fossa.svg',
@@ -142,10 +142,14 @@ export class ProfileComponent implements OnInit {
     postgresql: 'postgresql.svg',
     postman: 'postman.svg',
     primeng: 'primeng.svg',
+    python: 'python.svg',
     s3: 's3.svg',
     sonarqube: 'sonarqube.svg',
     splunk: 'splunk.svg',
-    'spring-boot': 'spring-boot.svg',
+    'spring-boot': 'spring.svg',
+    springboot: 'spring.svg',
+    'spring-mvc': 'spring.svg',
+    'spring-data-jpa': 'spring.svg',
     sql: 'sql.svg',
     svn: 'svn.svg',
     'svn-(tortoise)': 'svn.svg',
@@ -154,13 +158,20 @@ export class ProfileComponent implements OnInit {
     tomcat: 'tomcat.svg',
     typescript: 'typescript.svg',
     webstorm: 'WebStorm.svg',
-    xml: 'XML.svg'
+    xml: 'XML.svg',
+    'api-gateway': 'api-gateway.svg',
+    'cloud-container': 'cloud-container.svg',
+    'container-registry': 'cloud-container.svg',
+    'cloud-run': 'cloud-run.svg',
+    cloudfront: 'cloudfront.svg',
+    cognito: 'cognito.svg',
+    iam: 'iam.svg',
+    rds: 'rds.svg',
+    sns: 'sns.svg',
+    'swagger-svgrepo-com': 'swagger-svgrepo-com.svg',
+    swagger: 'swagger.svg',
   };
   
-  
-  
-
-  defaultSkillImage = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyAWmAe5UBdinr66fGFYymYvFCenoK9pizhg&s';
 
   constructor(
     private profileService: ProfileService,
@@ -224,7 +235,7 @@ export class ProfileComponent implements OnInit {
     const skillNameVariations = skill.toLowerCase().replace(/\s+/g, '-');
   
     // Append the basePath to the found skill image or return the default image
-    return this.skillImages[skillNameVariations] ? `${basePath}${this.skillImages[skillNameVariations]}` : this.defaultSkillImage;
+    return this.skillImages[skillNameVariations] ? `${basePath}${this.skillImages[skillNameVariations]}` : `${basePath}${this.skillImages['default']}`;
   }
   
 

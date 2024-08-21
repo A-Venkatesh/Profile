@@ -17,7 +17,7 @@ export const neha: Profile = {
     Testing: [],
     CloudPlatforms: [
       { name: 'AWS', details: ['IAM', 'RDS', 'EC2', 'S3', 'CloudFront', 'SNS', 'Cognito', 'API Gateway'] },
-      { name: 'GCP', details: ['Cloud Run', 'Storage', 'Cloud Build', 'Container Registry'] }
+      { name: 'GCP', details: ['Cloud Run', 'Cloud Storage', 'Cloud Build', 'Container Registry'] }
     ],
     Web: [],
     DatabaseSystems: ['Oracle Db', 'Microsoft SQL Server', 'MongoDB', 'PostgreSQL'],
