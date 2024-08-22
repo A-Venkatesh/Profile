@@ -70,23 +70,21 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
+    
+    this.profile = this.profileService.getProfile(this.getSubDomain());
+    this.items = this.dockService.getDockItems(this.profile);
+    this.dockPosition = this.layoutService.dockPosition;
+  }
+
+  getSubDomain() {
+    let subdomain= "neha";
     if (isPlatformBrowser(this.platformId)) {
-      // Log the full URL
-      console.log('Full URL:', window.location.href);
-
-      // Log the hostname (e.g., subdomain.domain.com)
-      console.log('Hostname:', window.location.hostname);
-
-      // Extract the subdomain if applicable
-      const subdomain = window.location.hostname.split('.')[0];
+      subdomain = window.location.hostname.split('.')[0];
       console.log('Subdomain:', subdomain);
     } else {
       console.log('Running on the server, window is not defined.');
     }
-    
-    this.profile = this.profileService.getProfile("neha");
-    this.items = this.dockService.getDockItems(this.profile);
-    this.dockPosition = this.layoutService.dockPosition;
+    return subdomain;
   }
 
   jumpToSection(section: string | null) {
