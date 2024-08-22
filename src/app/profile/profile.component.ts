@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { ProfileService } from './service/profile.service';
 import { DockService } from './service/dock.service';
 import { NavigationService } from './service/navigation.service';
@@ -62,12 +63,26 @@ export class ProfileComponent implements OnInit {
     private dockService: DockService,
     private navigationService: NavigationService,
     private layoutService: LayoutService,
-    private skillService: SkillService
+    private skillService: SkillService,
+    @Inject(PLATFORM_ID) private platformId: any
   ) { 
     this.skillIcons = this.getSkillIcons();
   }
 
   ngOnInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      // Log the full URL
+      console.log('Full URL:', window.location.href);
+
+      // Log the hostname (e.g., subdomain.domain.com)
+      console.log('Hostname:', window.location.hostname);
+
+      // Extract the subdomain if applicable
+      const subdomain = window.location.hostname.split('.')[0];
+      console.log('Subdomain:', subdomain);
+    } else {
+      console.log('Running on the server, window is not defined.');
+    }
     
     this.profile = this.profileService.getProfile("neha");
     this.items = this.dockService.getDockItems(this.profile);
