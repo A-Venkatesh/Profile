@@ -50,7 +50,7 @@ export class SkillService {
     css: 'css.svg',
     default: 'default.svg',
     docker: 'Docker.svg',
-    ec2: 'ec2.svg',
+    ec2: 'ec.png',
     eclipse: 'Eclipse.svg',
     firebase: 'firebase.svg',
     fossa: 'fossa.svg',
