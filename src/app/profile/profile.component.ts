@@ -8,7 +8,6 @@ import { AnimationService } from './service/animation.service';
 import { MenuItem } from 'primeng/api';
 import { NgOptimizedImage } from '@angular/common';
 import { CommonModule } from '@angular/common';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
@@ -30,7 +29,6 @@ import { trigger } from '@angular/animations';
   imports: [
     CommonModule,
     NgOptimizedImage,
-    MatToolbarModule,
     MatCardModule,
     MatIconModule,
     MatChipsModule,
