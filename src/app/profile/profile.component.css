@@ -11,8 +11,8 @@ body {
 
 .profile-card {
   width: 80%;
-  margin: 20px 0;
-  border-radius: 16px;
+  margin: 20px auto;
+  /* border-radius: 16px; */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -325,7 +325,7 @@ p-avatar {
 
 :host ::ng-deep .dock-window {
   width: 100%;
-  height: 100px;
+  /* height: 100px; */
   position: relative;
 }
 

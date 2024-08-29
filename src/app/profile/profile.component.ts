@@ -77,7 +77,7 @@ export class ProfileComponent implements OnInit {
   }
 
   getSubDomain() {
-    let subdomain= "neha";
+    let subdomain = "";
     if (isPlatformBrowser(this.platformId)) {
       subdomain = window.location.hostname.split('.')[0];
       console.log('Subdomain:', subdomain);

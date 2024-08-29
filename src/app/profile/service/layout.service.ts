@@ -15,10 +15,15 @@ export class LayoutService {
       const screenWidth = window.innerWidth;
       this.dockPosition = screenWidth < 990 ? 'bottom' : 'left';
     }
+    else { 
+      console.log("Windows Undefined");
+    }
   }
 
   @HostListener('window:resize', ['$event'])
   onResize() {
+    console.log("window size changed");
+    
     this.updateDockPosition();
   }
 }
