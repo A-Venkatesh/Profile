@@ -15,7 +15,7 @@ export class NavigationService {
   }
 
   scrollToFragment(fragment: string) {
-    this.router.navigate(['/home'], { fragment }).then(() => {
+    this.router.navigate(['/'], { fragment }).then(() => {
       const element = document.getElementById(fragment);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
