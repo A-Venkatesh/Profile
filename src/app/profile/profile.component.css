@@ -1,10 +1,12 @@
 body {
   font-family: 'Roboto', sans-serif;
+  width: 100%;
   /* Modern font */
 }
 
 .profile-container {
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
 }
@@ -21,7 +23,6 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 20px;
 }
 
 .profile-avatar {
@@ -40,10 +41,7 @@ body {
 }
 
 .quote {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 16px;
+  margin: 16px auto;
   font-style: italic;
 }
 
@@ -56,15 +54,6 @@ mat-card-header fa-icon {
   margin-right: 8px;
 }
 
-.icon-text {
-  display: flex;
-  align-items: center;
-}
-
-.icon-text mat-icon,
-.icon-text fa-icon {
-  margin-right: 8px;
-}
 
 .skills-section {
   margin-bottom: 20px;
@@ -322,13 +311,6 @@ p-avatar {
   width: 100%;
   height: 10%;
 }
-
-:host ::ng-deep .dock-window {
-  width: 100%;
-  /* height: 100px; */
-  position: relative;
-}
-
 .icon-button:hover {
   transform: scale(1.1);
 }
@@ -337,22 +319,23 @@ p-avatar {
   transition: transform 0.3s ease;
 }
 
-@media (max-width: 600px) {
-  .profile-card {
+@media only screen and (max-width: 600px) {
+  :host ::ng-deep .p-dock {
+    z-index: 1000;
     width: 100%;
   }
 
-  .icon-buttons {
-    gap: 5px;
-  }
 
-  .p-dock-left .p-dock-item .p-menuitem-content .p-dock-link {
-    width: 80px;
-    height: 80px;
+
+  .profile-card {
+    width: 100%;
+    margin: 5px auto;
+    border-radius: 0px;
   }
 }
 a {
   color: inherit;
   text-decoration: none;
 }
+
 

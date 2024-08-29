@@ -10,10 +10,12 @@
             </div>
             <mat-card-title class="name">{{ profile.name }}</mat-card-title>
             <mat-card-subtitle class="role">{{ profile.role }}</mat-card-subtitle>
-            <div class="quote">
-              <mat-icon aria-hidden="false">format_quote</mat-icon>
-              <p>I am a passionate developer always eager to learn and implement new technologies.</p>
-            </div>
+            <table class="quote">
+              <tr>
+                <td> <mat-icon aria-hidden="false">format_quote</mat-icon></td>
+                <td> <p>I am a passionate developer always eager to learn and implement new technologies.</p></td>
+              </tr>
+            </table>
           </div>
           <div class="icon-text location">
             <mat-icon aria-hidden="false">place</mat-icon>
@@ -250,14 +252,20 @@
               <mat-card-title>Awards</mat-card-title>
             </div>
           </ng-template>
-          <mat-chip-set>
-            <mat-chip *ngFor="let award of profile.awards">
-              <div class="icon-text">
-                <mat-icon aria-hidden="false">emoji_events</mat-icon>
-                <p mat-line>{{ award }}</p>
-              </div>
-            </mat-chip>
-          </mat-chip-set>
+          <div>
+            <p-chip *ngFor="let award of profile.awards" class="grayscale-chip"
+              [alt]="award">
+              <table>
+                <tr>
+                  <td> <mat-icon aria-hidden="false">emoji_events</mat-icon></td>
+                  <td><p>{{ award }}</p> </td>
+                </tr>
+              </table>
+
+             
+            </p-chip>
+          </div>
+
 
         </p-fieldset>
       </mat-card-content>
