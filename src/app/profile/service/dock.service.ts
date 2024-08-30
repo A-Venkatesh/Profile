@@ -23,7 +23,7 @@ export class DockService {
     }
 
     if (profile.personalProjects && profile.personalProjects.length > 0) {
-      items.push({ label: 'Personal Projects', faIcon: faProjectDiagram, target: 'projects' });
+      items.push({ label: 'Projects', faIcon: faProjectDiagram, target: 'projects' });
     }
 
     if (profile.education && profile.education.length > 0) {
