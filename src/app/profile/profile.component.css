@@ -311,6 +311,7 @@ p-avatar {
   width: 100%;
   height: 10%;
 }
+
 .icon-button:hover {
   transform: scale(1.1);
 }
@@ -333,9 +334,8 @@ p-avatar {
     border-radius: 0px;
   }
 }
+
 a {
   color: inherit;
   text-decoration: none;
 }
-
-
