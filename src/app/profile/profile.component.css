@@ -341,6 +341,25 @@ p-avatar {
     padding: 0 0.5rem;
     border-radius: 6px;
   }
+
+  .profile-container {
+    padding-bottom: 80px;
+  }
+
+  :host ::ng-deep .p-timeline-event-opposite,
+  .p-timeline-event-content {
+    display: none;
+
+  }
+
+  :host ::ng-deep .p-timeline-event-separator {
+    display: none;
+  }
+
+  :host ::ng-deep .p-fieldset {
+    padding: 0 0.7125rem;
+    margin: 0;
+  }
 }
 
 a {
