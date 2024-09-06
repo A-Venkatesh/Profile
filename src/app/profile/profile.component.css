@@ -1,7 +1,6 @@
 body {
   font-family: 'Roboto', sans-serif;
   width: 100%;
-  /* Modern font */
 }
 
 .profile-container {
@@ -14,7 +13,6 @@ body {
 .profile-card {
   width: 80%;
   margin: 20px auto;
-  /* border-radius: 16px; */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -45,15 +43,11 @@ body {
   font-style: italic;
 }
 
-.quote mat-icon {
-  margin-right: 8px;
-}
-
+.quote mat-icon,
 mat-card-header mat-icon,
 mat-card-header fa-icon {
   margin-right: 8px;
 }
-
 
 .skills-section {
   margin-bottom: 20px;
