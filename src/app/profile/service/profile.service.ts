@@ -13,6 +13,6 @@ export class ProfileService {
   };
 
   getProfile(profileKey: string): Profile {
-    return this.profiles[profileKey] || venkatesh; 
+    return this.profiles[profileKey] || neha; 
   }
 }

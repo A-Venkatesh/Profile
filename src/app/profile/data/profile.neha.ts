@@ -9,8 +9,8 @@ export const neha: Profile = {
   email: 'nsg2057@nyu.edu',
   linkedin: 'https://www.linkedin.com/in/nehagalla',
   github: 'https://github.com/Nsg2057',
-  displayPicture: 'https://media.licdn.com/dms/image/v2/D4E03AQGPBJ0cZ-D8sw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1689957477358?e=1729728000&v=beta&t=aZgbb-GCBd5TTmPY83WBjfqmOv05NjycZ1L-pv0lgn4',
-  about: `Results-driven Software Engineer with 4 years of experience and a master’s degree in computer science with a strong foundation in computer science, excelling in data structures and algorithms, Machine Learning, Big Data, Microservices, Containerization, and Test Driven Development. Demonstrated success in developing innovative solutions, leading projects, and collaborating effectively. Completed Master of Science in Computer Science.`,
+  displayPicture: 'https://media.licdn.com/dms/image/v2/D4E03AQGPBJ0cZ-D8sw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1689957477358?e=1735776000&v=beta&t=S9Qasp7_lz0gPS4UwArqBtY6L2fUDdd8RMn3tgjAM2I',
+  about: `Results-driven Software Engineer with 5 years of experience and a master’s degree in computer science. Specialized in Data Structures and Algorithms, Machine Learning, Microservices, Containerization, and Test-Driven Development. Proven expertise in Agile Software Development (Scrum), leading projects, and effective team collaboration.`,
   skills: {
     Languages: ['Python', 'Java', 'SQL', 'Typescript'],
     Frameworks: ['SpringBoot', 'Spring MVC', 'Spring Data JPA', 'Angular'],
@@ -21,6 +21,22 @@ export const neha: Profile = {
     ],
     Web: [],
     'Database Systems': ['Oracle Db', 'Microsoft SQL Server', 'MongoDB', 'PostgreSQL'],
+    'Data Libraries': [
+      'NumPy', 'TensorFlow', 'Keras', 'PyTorch', 'Scikit-learn',
+      'Pandas', 'OpenCV', 'PySpark'
+    ],
+    Containerization: [
+      'RedHat Quay (Container Registry)', 'Kubernetes OpenShift (Orchestration Tool)'
+    ],
+    Tools: [
+      'Colab', 'Jupyter', 'IntelliJ', 'Eclipse', 'WebStorm', 'Postman',
+      'Docker', 'Gradle', 'Maven', 'Jenkins', 'Tekton'
+    ],
+    Others: [
+      'REST APIs', 'GIT', 'Tomcat', 'JIRA', 'Microservices Architecture',
+      'Kafka', 'Swagger', 'Logging'
+    ],
+
     OperatingSystems: [],
     'Version Control': ['GIT'],
     'DevOps Tools': ['Docker', 'Maven', 'Jenkins'],
@@ -32,17 +48,50 @@ export const neha: Profile = {
     DataFormats: [],
     'Development and Testing Tools': ['IntelliJ', 'Eclipse', 'WebStorm', 'Postman', 'Docker'],
     'Development Practices': ['Microservices', 'REST APIs'],
-    Others: ['REST APIs', 'Tomcat', 'JIRA', 'Microservices Architecture', 'Kafka', 'Swagger', 'Logging'],
   },
+
   experience: [
     {
+      company: 'Ford Motor Company',
+      duration: { from: '01/2024', to: 'Present' },
+      logo: 'https://pbs.twimg.com/profile_images/1390283337055490048/Dt5ZJBL6_400x400.png',
+      projects: [
+        {
+          projectTitle: 'SpringBoot Microservices Migration',
+          duration: { from: '01/2024', to: 'Present' },
+          client: '', // Add client name if applicable
+          logo: '',
+          responsibilities: [
+            'Led the migration of SpringBoot microservices and APIs from on-premises PCF (Pivotal Cloud Foundry) to GCP OpenShift, utilizing JIB (Java Image Builder) for containerization and deployment to Red Hat Quay Registry.',
+            'Configured clusters and namespaces, incorporating best practices such as WIF binding and Terraform configurations, while developing a comprehensive migration strategy with detailed resource calculations.',
+            'Coordinated cross-team communication with the CaaS team to ensure a seamless migration process and established Tekton CI/CD pipelines for both application deployment and infrastructure changes.',
+            'Managed secure credential access and executed integration tests using GCP service accounts with WIF binding.',
+            'Facilitated application connectivity within the OpenShift cluster through private network (C2C) setups and exposed select services externally.',
+            'Implemented logging solutions with OpenShift LogSink and GCP Service accounts to store logs in Cloud Buckets, and integrated Dynatrace for monitoring, health checks, scaling insights, and alerts.',
+            'Utilized Environment Variables and ConfigMaps for configuration management and employed JFrog Artifactory for package version control to maintain deployment consistency.',
+          ],
+          techStack: [
+            'SpringBoot',
+            'GCP',
+            'OpenShift',
+            'JIB',
+            'RedHat Quay',
+            'Terraform',
+            'Tekton',
+            'Dynatrace',
+            'JFrog Artifactory'
+          ],
+        },
+      ],
+    },
+    {
       company: 'SAYge Link',
-      duration: { from: '09/2023', to: 'Present' },
+      duration: { from: '09/2023', to: '01/2024' },
       logo: 'https://media.bio.site/sites/AF66C67F-9D55-4F6E-A60B-287BE66D963E/h2c5FTBWHR5J9Ru5n44Ysh.png',  // Add logo URL here
       projects: [
         {
           projectTitle: 'User Endpoints Development',
-          duration: { from: '09/2023', to: 'Present' },
+          duration: { from: '09/2023', to: '01/2024' },
           client: '',
           logo: '',
           responsibilities: [
@@ -131,6 +180,17 @@ export const neha: Profile = {
     },
   ],
   personalProjects: [
+    {
+      projectTitle: 'MULTIPLE OBJECT TRACKING',
+      responsibilities: [
+        'Independently developed an advanced computer vision application for Multiple Object Tracking using OpenCV, Scikit-Learn, and Kalman Filter.',
+        'Achieved up to 95% accuracy in tracking multiple moving objects, with a specific focus on tennis balls in videos, even in challenging scenarios.',
+        'Fine-tuned Kalman Filter parameters using Scikit-Learn, optimizing tracking performance.',
+        'Delivered valuable insights for sports analysis, security, and surveillance applications through the successful implementation of the project.',
+      ],
+      techStack: ['OpenCV', 'Scikit-Learn', 'Kalman Filter'],
+      repoURL: '', // Add GitHub repo link if available
+    },
     {
       projectTitle: 'PRICE AGGREGATOR APPLICATION',
       responsibilities: [

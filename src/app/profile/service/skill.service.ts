@@ -111,6 +111,18 @@ export class SkillService {
     sns: 'sns.svg',
     'swagger-svgrepo-com': 'swagger-svgrepo-com.svg',
     swagger: 'swagger.svg',
+    colab: 'colab.svg',
+    jupyter: 'jupyter.svg',
+    pandas: 'pandas.svg',
+    opencv: 'opencv.svg',
+    keras: 'keras.svg',
+    pytorch: 'pytorch.svg',
+    pyspark: 'pyspark.svg',
+    numpy: 'numpy.svg',
+    tensorflow: 'tensorflow.svg',
+    'scikit-learn': 'scikit-learn.svg',
+    'redhat-quay-(container-registry)': 'redhatquay.svg',
+    'kubernetes-openshift-(orchestration-tool)': 'kubernetes-openshift.svg',
   };
 
   getSkillCategories(skills: any): string[] {
