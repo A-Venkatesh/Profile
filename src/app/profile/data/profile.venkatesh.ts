@@ -5,7 +5,7 @@ export const venkatesh: Profile = {
   name: 'Venkatesh Anbu Selvam',
   role: 'Full-Stack Software Engineer • Back-End Engineer • API and Cloud Engineer',
   location: 'Bronx, New York - 10463',
-  phone: '+1 (929) 633-2204',
+  phone: '+1 (646) 494-5454',
   email: 'vkh@live.in',
   linkedin: 'https://www.linkedin.com/in/venkateshanbu',
   github: 'https://github.com/A-Venkatesh',
@@ -42,6 +42,41 @@ export const venkatesh: Profile = {
     Tools: [],
   },
   experience: [
+    {
+      company: 'Ford Motor Company',
+      duration: { from: '04/2024', to: 'Present' },
+      logo: 'https://pbs.twimg.com/profile_images/1390283337055490048/Dt5ZJBL6_400x400.png',
+      projects: [
+        {
+          projectTitle: 'Microserives for Ecommerce platform',
+          duration: { from: '04/2024', to: 'Present' },
+          client: '', // Add client name if applicable
+          logo: '',
+          responsibilities: [
+            'Build multiple microservices using an API-first approach in Spring Boot with shift-left quality practices.',
+            'Led the migration of SpringBoot microservices and APIs from on-premises PCF (Pivotal Cloud Foundry) to GCP OpenShift, utilizing JIB (Java Image Builder) for containerization and deployment to Red Hat Quay Registry.',
+            'Configured clusters and namespaces, incorporating best practices such as WIF binding and Terraform configurations, while developing a comprehensive migration strategy with detailed resource calculations.',
+            'Coordinated cross-team communication with the CaaS team to ensure a seamless migration process and established Tekton CI/CD pipelines for both application deployment and infrastructure changes.',
+            'Managed secure credential access and executed integration tests using GCP service accounts with WIF binding.',
+            'Facilitated application connectivity within the OpenShift cluster through private network (C2C) setups and exposed select services externally.',
+            'Implemented logging solutions with OpenShift LogSink and GCP Service accounts to store logs in Cloud Buckets, and integrated Dynatrace for monitoring, health checks, scaling insights, and alerts.',
+            'Utilized Environment Variables and ConfigMaps for configuration management and employed JFrog Artifactory for package version control to maintain deployment consistency.',
+          ],
+          techStack: [
+            'SpringBoot',
+            'GCP',
+            'OpenShift',
+            'JIB',
+            'RedHat Quay',
+            'Terraform',
+            'Tekton',
+            'Dynatrace',
+            'JFrog Artifactory',
+            'Kotlin'
+          ],
+        },
+      ],
+    },
     {
       company: 'HTC Global Services',
       duration: {
