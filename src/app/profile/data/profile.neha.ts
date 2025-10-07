@@ -9,7 +9,7 @@ export const neha: Profile = {
   email: 'nsg2057@nyu.edu',
   linkedin: 'https://www.linkedin.com/in/nehagalla',
   github: 'https://github.com/Nsg2057',
-  displayPicture: 'https://media.licdn.com/dms/image/v2/D4E03AQGPBJ0cZ-D8sw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1689957477358?e=1735776000&v=beta&t=S9Qasp7_lz0gPS4UwArqBtY6L2fUDdd8RMn3tgjAM2I',
+  displayPicture: 'https://media.licdn.com/dms/image/v2/D4E03AQGPBJ0cZ-D8sw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1689957477358?e=1762992000&v=beta&t=DKrAqCJvs5wYmjA8sacCqGyDTGxKApOVNzuG5rYF8M0',
   about: `Results-driven Software Engineer with 5 years of experience and a master’s degree in computer science. Specialized in Data Structures and Algorithms, Machine Learning, Microservices, Containerization, and Test-Driven Development. Proven expertise in Agile Software Development (Scrum), leading projects, and effective team collaboration.`,
   skills: {
     Languages: ['Python', 'Java', 'Kotlin', 'SQL', 'Typescript'],
