@@ -3,21 +3,21 @@ import { Profile } from "./profile.interface";
 
 export const venkatesh: Profile = {
   name: 'Venkatesh Anbu Selvam',
-  role: 'Full-Stack Software Engineer • Back-End Engineer • API and Cloud Engineer',
-  location: 'Bronx, New York - 10463',
+  role: 'Technical Anchor • Full-Stack Software Engineer • Cloud-Native Engineer',
+  location: 'Detroit, Michigan - 48226',
   phone: '+1 (646) 494-5454',
   email: 'vkh@live.in',
   linkedin: 'https://www.linkedin.com/in/venkateshanbu',
   github: 'https://github.com/A-Venkatesh',
   displayPicture: 'https://media.licdn.com/dms/image/v2/D5603AQE3s9kqPTToRQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1711751348767?e=1773878400&v=beta&t=V-Zc0HaTTsvUPH676mev04motWbQEfFBA6pMIfMMIwo',
-  about: 'Seasoned Full Stack Software Engineer with 6+ years of experience. I specialize in creation and development of web applications and services, covering every stage of the software development lifecycle from business analysis to testing. My expertise is in web application development, spanning from API, Java, Angular and Typescript, evidenced by contributions to Automobile, Telecom and Insurance domains. Expert in cloud platforms (Azure, GCP), DevOps (Tekton, Terraform, Jenkins, Ansible), and databases (Oracle Db, MongoDB, PostgreSQL), my skills extend to Agile methodologies, security practices, and quality assurance tools (42Crunch, SonarQube, Postman, CheckMarx).',
+  about: 'Technical Lead & Cloud-Native Engineer with 8+ years of experience designing secure, scalable microservices and enterprise-grade API platforms. Proven ability to drive end-to-end architecture, mentor teams, and deliver production-resilient systems aligned with business strategy. Expert in Java 21, Spring Boot 3, and Google Cloud Platform (GCP) services. Expertise in designing high-performing, scalable systems with security-first approach. Adhere to clean code principles, delivering bug-free, maintainable, and efficient software solutions. Proficient with modern technologies including Java, SQL, Typescript, Kotlin, Angular, Node.js, Azure, GCP, AWS, and comprehensive DevOps tools.',
   skills: {
     Languages: ['Java', 'SQL', 'Typescript', 'Kotlin'],
     Frameworks: ['Spring Boot', 'Angular', 'Node.js'],
-    Testing: ['JUnit', 'Mockito'],
+    Testing: ['JUnit', 'Mockito', 'REST Assured'],
     'Cloud Platforms': [
-      { name: 'Azure', details: ['API manager', 'AD', 'Analytics', 'Cosmos DB', 'Key Vault'] },
-      { name: 'Google Cloud Platform', details: ['Apigee', 'Cloud Functions', 'Cloud Data Fusion', 'Cloud Pub/Sub', 'Cloud Run', 'Cloud Logging', 'Cloud Storage', 'BigQuery', 'Cloud Secret', 'Cloud Build', 'Cloud Artifacts'] },
+      { name: 'Azure', details: ['API Manager', 'AD', 'B2C', 'Analytics', 'Cosmos DB', 'Key Vault'] },
+      { name: 'Google Cloud Platform', details: ['Apigee x', 'Cloud Functions', 'Cloud Data Fusion', 'Cloud Pub/Sub', 'Cloud Run', 'Cloud Log', 'Cloud Storage', 'BigQuery', 'Cloud Secret', 'Cloud Build', 'Cloud Artifacts', 'Memorystore'] },
       { name: 'Amazon Web Services', details: ['Lambda', 'S3', 'EC2'] }
     ],
     Web: ['HTML', 'CSS', 'Material', 'PrimeNG'],
@@ -44,38 +44,50 @@ export const venkatesh: Profile = {
   experience: [
     {
       company: 'Ford Motor Company',
-      duration: { from: '04/2024', to: 'Present' },
+      duration: { from: '09/2024', to: 'Present' },
       logo: 'https://pbs.twimg.com/profile_images/1390283337055490048/Dt5ZJBL6_400x400.png',
       projects: [
         {
-          projectTitle: 'Microserives for Ecommerce platform',
-          duration: { from: '04/2024', to: 'Present' },
+          projectTitle: 'E-Commerce Platform',
+          duration: { from: '08/2024', to: 'Present' },
           client: '', // Add client name if applicable
           logo: '',
           responsibilities: [
-            'Build multiple microservices using an API-first approach in Spring Boot with shift-left quality practices.',
-            'Led the migration of SpringBoot microservices and APIs from on-premises PCF (Pivotal Cloud Foundry) to GCP OpenShift, utilizing JIB (Java Image Builder) for containerization and deployment to Red Hat Quay Registry.',
-            'Configured clusters and namespaces, incorporating best practices such as WIF binding and Terraform configurations, while developing a comprehensive migration strategy with detailed resource calculations.',
-            'Coordinated cross-team communication with the CaaS team to ensure a seamless migration process and established Tekton CI/CD pipelines for both application deployment and infrastructure changes.',
-            'Managed secure credential access and executed integration tests using GCP service accounts with WIF binding.',
-            'Facilitated application connectivity within the OpenShift cluster through private network (C2C) setups and exposed select services externally.',
-            'Implemented logging solutions with OpenShift LogSink and GCP Service accounts to store logs in Cloud Buckets, and integrated Dynatrace for monitoring, health checks, scaling insights, and alerts.',
-            'Utilized Environment Variables and ConfigMaps for configuration management and employed JFrog Artifactory for package version control to maintain deployment consistency.',
+            'Develop and implement robust microservices for Ford\'s e-commerce platform, focusing on cart and checkout functionalities to enable seamless online and dealership-based sales processes.',
+            'Lead end-to-end technical ownership—from low-level design and API contract governance (RFC-aligned) to integration enablement and production reliability.',
+            'Architect and deliver security-first, cloud-native microservices for Ford\'s global e-commerce platform (Cart, Checkout, Express Checkout), driving scalable online and dealership sales.',
+            'Leverage modern technologies such as Java 21, Spring Boot 3, and Google Cloud Platform (GCP) services to design and maintain high-performing, scalable systems.',
+            'Collaborate closely with Product Managers, Architects, DevOps, and QA teams to deliver high-quality solutions aligned with business objectives.',
+            'Conduct code reviews, adhere to best practices, and ensure compliance with Ford\'s architectural principles.',
+            'Utilize AI tools like Copilot to optimize development workflows and enhance efficiency.',
+            'Identify and address performance bottlenecks, optimize code, and ensure solutions meet performance requirements.',
+            'Actively participate in Agile ceremonies, define technical features, contribute to user stories, and employ methodologies like Kanban and Extreme Programming to enhance workflow.'
           ],
-          techStack: [
-            'SpringBoot',
-            'GCP',
-            'OpenShift',
-            'JIB',
-            'RedHat Quay',
-            'Terraform',
-            'Tekton',
-            'Dynatrace',
-            'JFrog Artifactory',
-            'Kotlin'
+          techStack: ['Java 21', 'Spring Boot', 'Gradle', 'Git', 'Mockito', 'MongoDB', 'GCP', 'JFrog', 'Tekton', 'Terraform', 'Redis', 'Azure', 'Reactive', 'Dynatrace', 'Grafana', 'SonarQube', '42Crunch', 'Fossa', 'Checkmarx', 'Postman', 'JIRA']
+        }
+      ]
+    },
+    {
+      company: 'Wisetek Providers Inc',
+      duration: { from: '04/2024', to: '08/2024' },
+      logo: 'https://www.wisepro.com/assets/images/logo/logo.png',
+      projects: [
+        {
+          projectTitle: 'Microservices and Cloud Migration',
+          duration: { from: '04/2024', to: '08/2024' },
+          client: 'Citizens Financial Group',
+          logo: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAG1BMVEX8/vw0mmQEmmRkzpw0mpyczszM/vzM/szMzszxIXIHAAAAbElEQVQYlW1PSRLAMAhC1MT/v7guSS8tF5ERVKCx8GJTAKULgSi+KAIVTSGKAp7FSjDW1JgkLYXuY2WfrpTVM3xL9xPWHjHTHtXD7Ao+bDPDbSxkWTw63zs0fteew2rZ3XZO91b6OZ/nnIIPHu+ZAbgVe+0tAAAAAElFTkSuQmCC',
+          responsibilities: [
+            'Developed scalable microservices and secure APIs using Spring Boot and Angular, focusing on enhancing cloud connectivity and security.',
+            'Played a key role in migrating legacy systems to modern microservices architecture, improving system performance and maintainability.',
+            'Leveraged AWS for deploying applications, ensuring high availability and scalability.',
+            'Conducted code reviews and implemented best practices in version control using Git and CI/CD pipelines with Jenkins.',
+            'Collaborated with cross-functional teams to ensure timely delivery of features and improvements, adhering to Agile methodologies.',
+            'Enhanced data processing and analytics capabilities using PostgreSQL and MongoDB.'
           ],
-        },
-      ],
+          techStack: ['Java 17', 'SpringBoot', 'Maven', 'Git', 'AWS', 'Angular', 'Mockito', 'MongoDB', 'Docker Hub', 'Vault', 'JIRA', 'Jenkins']
+        }
+      ]
     },
     {
       company: 'HTC Global Services',
