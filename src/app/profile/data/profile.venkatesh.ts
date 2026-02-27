@@ -14,7 +14,7 @@ export const venkatesh: Profile = {
   skills: {
     Languages: ['Java', 'SQL', 'Typescript', 'Kotlin'],
     Frameworks: ['Spring Boot', 'Angular', 'Node.js'],
-    Testing: ['JUnit', 'Mockito', 'REST Assured'],
+    Testing: ['JUnit', 'Mockito', 'REST Assured', 'XRAY'],
     'Cloud Platforms': [
       { name: 'Azure', details: ['API Manager', 'AD', 'B2C', 'Analytics', 'Cosmos DB', 'Key Vault'] },
       { name: 'Google Cloud Platform', details: ['Apigee x', 'Cloud Functions', 'Cloud Data Fusion', 'Cloud Pub/Sub', 'Cloud Run', 'Cloud Log', 'Cloud Storage', 'BigQuery', 'Cloud Secret', 'Cloud Build', 'Cloud Artifacts', 'Memorystore'] },
@@ -63,7 +63,7 @@ export const venkatesh: Profile = {
             'Identify and address performance bottlenecks, optimize code, and ensure solutions meet performance requirements.',
             'Actively participate in Agile ceremonies, define technical features, contribute to user stories, and employ methodologies like Kanban and Extreme Programming to enhance workflow.'
           ],
-          techStack: ['Java 21', 'Spring Boot', 'Gradle', 'Git', 'Mockito', 'MongoDB', 'GCP', 'JFrog', 'Tekton', 'Terraform', 'Redis', 'Azure', 'Reactive', 'Dynatrace', 'Grafana', 'SonarQube', '42Crunch', 'Fossa', 'Checkmarx', 'Postman', 'JIRA']
+          techStack: ['Java 21', 'Spring Boot', 'Gradle', 'Git', 'GCP', 'JFrog', 'Tekton', 'Terraform', 'Redis', 'Azure', 'Reactive', 'Dynatrace', 'Grafana', 'SonarQube', '42Crunch', 'Fossa', 'Checkmarx', 'Postman', 'JIRA', 'XRAY']
         }
       ]
     },
