@@ -9,7 +9,7 @@ export const venkatesh: Profile = {
   email: 'vkh@live.in',
   linkedin: 'https://www.linkedin.com/in/venkateshanbu',
   github: 'https://github.com/A-Venkatesh',
-  displayPicture: 'https://media.licdn.com/dms/image/v2/D5603AQE3s9kqPTToRQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1711751348767?e=1735776000&v=beta&t=8O3r-ttSxZtJKmWqrCXKfG62GnauglM4Mlv2-CZ1F8Y',
+  displayPicture: 'https://media.licdn.com/dms/image/v2/D5603AQE3s9kqPTToRQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1711751348767?e=1773878400&v=beta&t=V-Zc0HaTTsvUPH676mev04motWbQEfFBA6pMIfMMIwo',
   about: 'Seasoned Full Stack Software Engineer with 6+ years of experience. I specialize in creation and development of web applications and services, covering every stage of the software development lifecycle from business analysis to testing. My expertise is in web application development, spanning from API, Java, Angular and Typescript, evidenced by contributions to Automobile, Telecom and Insurance domains. Expert in cloud platforms (Azure, GCP), DevOps (Tekton, Terraform, Jenkins, Ansible), and databases (Oracle Db, MongoDB, PostgreSQL), my skills extend to Agile methodologies, security practices, and quality assurance tools (42Crunch, SonarQube, Postman, CheckMarx).',
   skills: {
     Languages: ['Java', 'SQL', 'Typescript', 'Kotlin'],
